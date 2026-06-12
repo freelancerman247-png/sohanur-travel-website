@@ -9,6 +9,7 @@ A responsive static travel agency website for Sohanur Travel. It includes a poli
 - Mobile-friendly navigation menu
 - Package buttons that prefill the booking flow
 - Client-side booking form confirmation
+- PHP admin dashboard for customer service queries
 - No build step or external JavaScript dependencies
 
 ## Run locally
@@ -27,3 +28,43 @@ Then visit `http://localhost:8000`.
 - `contact.html` - dedicated contact page
 - `styles.css` - responsive layout and visual design
 - `script.js` - menu, package selection, sticky header, and form behavior
+- `submit-query.php` - saves customer queries from website forms
+- `thank-you.php` - customer confirmation page after query submission
+- `admin/` - admin login and query dashboard
+- `data/` - protected JSON query storage
+- `query-form-example.html` - copy/paste form snippet for service pages
+
+## Hostinger admin dashboard setup
+
+Upload these folders/files into `public_html`:
+
+```text
+admin/
+data/
+submit-query.php
+thank-you.php
+query-form-example.html
+```
+
+Then open:
+
+```text
+https://your-domain.com/admin/login.php
+```
+
+Default login:
+
+```text
+Username: admin
+Password: Admin@12345
+```
+
+Change the password after upload by editing `admin/config.php`. Replace `ADMIN_PASSWORD_HASH` with the SHA-256 hash of your new password.
+
+To collect queries from any service page, add a form that posts to:
+
+```html
+<form action="submit-query.php" method="post">
+```
+
+You can copy the complete example from `query-form-example.html`.
