@@ -1,0 +1,366 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Sohanur Travel crafts memorable tours across Bangladesh and beyond with curated packages, local guides, and easy booking.">
+  <title>Sohanur Travel | Discover Your Next Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+  <header class="site-header" data-header>
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="#home" aria-label="Sohanur Travel home">
+        <span class="brand-mark">ST</span>
+        <span>Sohanur Travel</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-menu" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="primary-menu" data-nav-menu>
+        <a href="#destinations">Destinations</a>
+        <a href="#packages">Packages</a>
+        <a href="#about">About</a>
+        <a href="#reviews">Reviews</a>
+        <a href="#contact">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="#booking">Plan a Trip</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="hero" id="home">
+      <div class="hero-content">
+        <p class="eyebrow">Bangladesh based travel experts</p>
+        <h1>Explore beautiful places with confidence and comfort.</h1>
+        <p class="hero-copy">
+          From Cox's Bazar sunsets to Sylhet tea gardens and international getaways,
+          Sohanur Travel designs guided trips that feel personal, safe, and effortless.
+        </p>
+        <div class="hero-actions">
+          <a class="button button-primary" href="#packages">View Packages</a>
+          <a class="button button-secondary" href="#contact">Talk to an Expert</a>
+        </div>
+      </div>
+
+      <div class="hero-card" aria-label="Featured destination">
+        <div class="hero-card-media">
+          <span>Featured Tour</span>
+        </div>
+        <div class="hero-card-body">
+          <h2>Cox's Bazar Weekend Escape</h2>
+          <p>3 days, 2 nights with hotel, transport, beach activities, and local guide.</p>
+          <div class="hero-card-meta">
+            <strong>From BDT 9,500</strong>
+            <span>Per person</span>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="stats" aria-label="Travel highlights">
+      <div>
+        <strong>1200+</strong>
+        <span>Happy travelers</span>
+      </div>
+      <div>
+        <strong>45+</strong>
+        <span>Curated routes</span>
+      </div>
+      <div>
+        <strong>24/7</strong>
+        <span>Trip assistance</span>
+      </div>
+      <div>
+        <strong>4.9/5</strong>
+        <span>Customer rating</span>
+      </div>
+    </section>
+
+    <section class="section" id="destinations">
+      <div class="section-heading">
+        <p class="eyebrow">Top destinations</p>
+        <h2>Choose your next favorite view.</h2>
+        <p>Handpicked places for family vacations, couple trips, group tours, and quick weekend breaks.</p>
+      </div>
+
+      <div class="destination-grid">
+        <article class="destination-card destination-cox">
+          <div class="card-overlay">
+            <span>Sea beach</span>
+            <h3>Cox's Bazar</h3>
+            <p>The world's longest natural sea beach with seafood, sunsets, and island day trips.</p>
+          </div>
+        </article>
+        <article class="destination-card destination-sylhet">
+          <div class="card-overlay">
+            <span>Tea gardens</span>
+            <h3>Sylhet</h3>
+            <p>Green hills, Ratargul swamp forest, Jaflong stones, and calm resort stays.</p>
+          </div>
+        </article>
+        <article class="destination-card destination-sundarbans">
+          <div class="card-overlay">
+            <span>Mangrove adventure</span>
+            <h3>Sundarbans</h3>
+            <p>Launch cruises, wildlife spotting, forest walks, and UNESCO heritage landscapes.</p>
+          </div>
+        </article>
+        <article class="destination-card destination-maldives">
+          <div class="card-overlay">
+            <span>International</span>
+            <h3>Maldives</h3>
+            <p>Resort islands, crystal water, honeymoon experiences, and easy flight support.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="packages">
+      <div class="section-heading">
+        <p class="eyebrow">Popular packages</p>
+        <h2>Flexible tours for every travel style.</h2>
+        <p>Select a ready package or ask us to customize travel dates, hotels, meals, and transport.</p>
+      </div>
+
+      <div class="package-grid">
+        <article class="package-card">
+          <div class="package-header">
+            <span>Weekend</span>
+            <h3>Cox's Bazar Beach Break</h3>
+          </div>
+          <p>Hotel stay, return transport, breakfast, beach activities, and local support.</p>
+          <ul>
+            <li>3 days, 2 nights</li>
+            <li>Couple and family friendly</li>
+            <li>Optional Saint Martin add-on</li>
+          </ul>
+          <div class="package-footer">
+            <strong>BDT 9,500</strong>
+            <button class="button button-outline" type="button" data-package="Cox's Bazar Beach Break">Book This</button>
+          </div>
+        </article>
+
+        <article class="package-card featured-package">
+          <div class="package-ribbon">Best value</div>
+          <div class="package-header">
+            <span>Nature</span>
+            <h3>Sylhet Tea Garden Tour</h3>
+          </div>
+          <p>Resort stay, Jaflong, Ratargul, Bisnakandi, tea garden walk, and private transport.</p>
+          <ul>
+            <li>4 days, 3 nights</li>
+            <li>Private car available</li>
+            <li>Great for groups</li>
+          </ul>
+          <div class="package-footer">
+            <strong>BDT 13,900</strong>
+            <button class="button button-primary" type="button" data-package="Sylhet Tea Garden Tour">Book This</button>
+          </div>
+        </article>
+
+        <article class="package-card">
+          <div class="package-header">
+            <span>Adventure</span>
+            <h3>Sundarbans Cruise</h3>
+          </div>
+          <p>Launch cabin, full board meals, forest permissions, guide, and wildlife route planning.</p>
+          <ul>
+            <li>3 days, 2 nights</li>
+            <li>All meals included</li>
+            <li>Guided forest activities</li>
+          </ul>
+          <div class="package-footer">
+            <strong>BDT 16,500</strong>
+            <button class="button button-outline" type="button" data-package="Sundarbans Cruise">Book This</button>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section about-layout" id="about">
+      <div>
+        <p class="eyebrow">Why travel with us</p>
+        <h2>Local planning, reliable partners, and transparent support.</h2>
+        <p>
+          We combine local knowledge with verified hotels, experienced drivers, and clear communication
+          so travelers know what to expect before, during, and after every trip.
+        </p>
+        <div class="feature-list">
+          <div>
+            <span class="feature-icon">01</span>
+            <h3>Custom itineraries</h3>
+            <p>Trips are adjusted around your budget, timing, comfort level, and must-see places.</p>
+          </div>
+          <div>
+            <span class="feature-icon">02</span>
+            <h3>Trusted support</h3>
+            <p>Our team stays reachable for route changes, check-ins, hotel issues, and urgent help.</p>
+          </div>
+          <div>
+            <span class="feature-icon">03</span>
+            <h3>Clear pricing</h3>
+            <p>Package details are explained upfront with no confusing hidden service charges.</p>
+          </div>
+        </div>
+      </div>
+
+      <div class="timeline-card">
+        <h3>How booking works</h3>
+        <ol class="timeline">
+          <li>
+            <strong>Share your idea</strong>
+            <span>Tell us destination, people, dates, and budget.</span>
+          </li>
+          <li>
+            <strong>Get a plan</strong>
+            <span>We send route, hotel options, inclusions, and price.</span>
+          </li>
+          <li>
+            <strong>Confirm booking</strong>
+            <span>Pay securely and receive final travel documents.</span>
+          </li>
+          <li>
+            <strong>Enjoy the trip</strong>
+            <span>Travel with support from start to finish.</span>
+          </li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section section-muted" id="reviews">
+      <div class="section-heading">
+        <p class="eyebrow">Traveler stories</p>
+        <h2>Guests recommend us for smooth travel.</h2>
+      </div>
+
+      <div class="review-grid">
+        <article class="review-card">
+          <p>"The Cox's Bazar package was very organized. Hotel location, transport, and guide support were excellent."</p>
+          <div>
+            <strong>Nusrat Jahan</strong>
+            <span>Family traveler</span>
+          </div>
+        </article>
+        <article class="review-card">
+          <p>"We requested a custom Sylhet group tour and everything matched the itinerary. Very responsive team."</p>
+          <div>
+            <strong>Tanvir Rahman</strong>
+            <span>Group organizer</span>
+          </div>
+        </article>
+        <article class="review-card">
+          <p>"Clear pricing and friendly service. The Sundarbans cruise felt safe, comfortable, and memorable."</p>
+          <div>
+            <strong>Farhana Akter</strong>
+            <span>Adventure guest</span>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section booking-layout" id="booking">
+      <div>
+        <p class="eyebrow">Start planning</p>
+        <h2>Tell us what kind of trip you want.</h2>
+        <p>
+          Submit the quick form and our travel team will prepare a suggested plan.
+          This demo stores nothing; it shows an on-page confirmation.
+        </p>
+        <div class="contact-card">
+          <h3>Need fast help?</h3>
+          <p>Call or message us for urgent travel dates, visa guidance, or hotel availability.</p>
+          <a href="tel:+8801712345678">+880 1712-345678</a>
+          <a href="mailto:hello@sohanurtravel.com">hello@sohanurtravel.com</a>
+        </div>
+      </div>
+
+      <form class="booking-form" data-booking-form>
+        <label>
+          Full name
+          <input type="text" name="name" autocomplete="name" required placeholder="Your name">
+        </label>
+        <label>
+          Phone or email
+          <input type="text" name="contact" autocomplete="email" required placeholder="How can we reach you?">
+        </label>
+        <label>
+          Destination
+          <select name="destination" required data-destination-select>
+            <option value="">Choose destination</option>
+            <option>Cox's Bazar</option>
+            <option>Sylhet</option>
+            <option>Sundarbans</option>
+            <option>Maldives</option>
+            <option>Custom destination</option>
+          </select>
+        </label>
+        <div class="form-row">
+          <label>
+            Travelers
+            <input type="number" name="travelers" min="1" max="50" required placeholder="2">
+          </label>
+          <label>
+            Travel month
+            <input type="month" name="month" required>
+          </label>
+        </div>
+        <label>
+          Message
+          <textarea name="message" rows="4" placeholder="Tell us your preferred budget, hotel type, or special needs"></textarea>
+        </label>
+        <button class="button button-primary" type="submit">Send Trip Request</button>
+        <p class="form-status" role="status" aria-live="polite" data-form-status></p>
+      </form>
+    </section>
+
+    <section class="section faq-section" id="contact">
+      <div class="section-heading">
+        <p class="eyebrow">Questions</p>
+        <h2>Helpful details before you book.</h2>
+      </div>
+
+      <div class="faq-grid">
+        <details open>
+          <summary>Can you customize packages?</summary>
+          <p>Yes. We can adjust destinations, hotels, transport, meals, sightseeing, and total budget.</p>
+        </details>
+        <details>
+          <summary>Do you support group tours?</summary>
+          <p>Yes. We arrange family, corporate, student, and community group tours with dedicated coordination.</p>
+        </details>
+        <details>
+          <summary>Are international trips available?</summary>
+          <p>Yes. We can help with destinations such as Maldives, Thailand, Malaysia, India, and Dubai.</p>
+        </details>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div>
+      <a class="brand" href="#home">
+        <span class="brand-mark">ST</span>
+        <span>Sohanur Travel</span>
+      </a>
+      <p>Reliable travel planning for Bangladesh and international holidays.</p>
+    </div>
+    <div class="footer-links">
+      <a href="#destinations">Destinations</a>
+      <a href="#packages">Packages</a>
+      <a href="#booking">Booking</a>
+      <a href="#contact">Contact</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
