@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Browse popular travel destinations from Sohanur Travels including Maldives, Dubai, Kashmir, Thailand, Malaysia, and Umrah plans.">
+  <title>Destinations | Sohanur Travels</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <a class="skip-link" href="#main">Skip to content</a>
+
+  <header class="site-header" data-header>
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html" aria-label="Sohanur Travels home">
+        <span class="brand-mark">ST</span>
+        <span>
+          <strong>Sohanur Travels</strong>
+          <small>Explore with confidence</small>
+        </span>
+      </a>
+      <button class="nav-toggle" type="button" aria-controls="primary-nav" aria-expanded="false" data-nav-toggle>
+        <span class="sr-only">Toggle navigation</span>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+      <ul class="nav-links" id="primary-nav" data-nav-menu>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="services.html">Services</a></li>
+        <li><a class="active" href="destinations.html">Destinations</a></li>
+        <li><a href="packages.html">Packages</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+      <a class="nav-cta" href="contact.html">Plan a trip</a>
+    </nav>
+  </header>
+
+  <main id="main">
+    <section class="page-hero section">
+      <div class="container page-hero-grid">
+        <div class="reveal">
+          <p class="eyebrow">Destinations</p>
+          <h1>From blue islands to bright cities, choose your next story.</h1>
+          <p>Use these destinations as inspiration. Every route can be adjusted for budget, travel dates, hotel level, and group size.</p>
+        </div>
+        <div class="page-hero-card reveal delay-1">
+          <strong>Custom destination?</strong>
+          <span>If your dream place is not listed, send it through WhatsApp and we will prepare options.</span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container destination-list">
+        <article class="destination-detail card-maldives reveal">
+          <span>Honeymoon favorite</span>
+          <h2>Maldives</h2>
+          <p>Overwater villas, beach resorts, snorkeling, candlelight dinners, and peaceful ocean views.</p>
+          <button class="btn btn-small btn-light" type="button" data-package="Maldives destination inquiry">Ask for Maldives</button>
+        </article>
+        <article class="destination-detail card-dubai reveal delay-1">
+          <span>Family and luxury</span>
+          <h2>Dubai</h2>
+          <p>Burj Khalifa, desert safari, shopping, marina cruises, theme parks, and modern city experiences.</p>
+          <button class="btn btn-small btn-light" type="button" data-package="Dubai destination inquiry">Ask for Dubai</button>
+        </article>
+        <article class="destination-detail card-kashmir reveal delay-2">
+          <span>Mountain beauty</span>
+          <h2>Kashmir</h2>
+          <p>Houseboats, lakes, gardens, snowy valleys, scenic roads, and romantic mountain views.</p>
+          <button class="btn btn-small btn-light" type="button" data-package="Kashmir destination inquiry">Ask for Kashmir</button>
+        </article>
+        <article class="destination-detail card-thailand reveal">
+          <span>Beach and city</span>
+          <h2>Thailand</h2>
+          <p>Bangkok, Phuket, Pattaya, island hopping, nightlife, shopping, and relaxed beach days.</p>
+          <button class="btn btn-small btn-light" type="button" data-package="Thailand destination inquiry">Ask for Thailand</button>
+        </article>
+        <article class="destination-detail card-malaysia reveal delay-1">
+          <span>Easy family trip</span>
+          <h2>Malaysia</h2>
+          <p>Kuala Lumpur, Langkawi, Genting Highlands, city tours, cable cars, and family attractions.</p>
+          <button class="btn btn-small btn-light" type="button" data-package="Malaysia destination inquiry">Ask for Malaysia</button>
+        </article>
+        <article class="destination-detail card-umrah reveal delay-2">
+          <span>Spiritual journey</span>
+          <h2>Umrah</h2>
+          <p>Flight, hotel, transport, and guidance-focused plans for a smooth sacred journey.</p>
+          <button class="btn btn-small btn-light" type="button" data-package="Umrah package inquiry">Ask for Umrah</button>
+        </article>
+      </div>
+    </section>
+
+    <section class="section muted-section">
+      <div class="container split-grid">
+        <div class="content-panel reveal">
+          <p class="eyebrow">Destination matching</p>
+          <h2>Not sure where to go?</h2>
+          <p>Tell us your budget, available dates, travel purpose, and preferred style. We can recommend beach, city, nature, shopping, spiritual, or adventure options that make sense for you.</p>
+        </div>
+        <form class="mini-form reveal delay-1" data-whatsapp-form>
+          <label>
+            <span>Your travel style</span>
+            <select name="travel_style" required>
+              <option value="">Choose one</option>
+              <option>Beach and relaxation</option>
+              <option>Family holiday</option>
+              <option>Honeymoon</option>
+              <option>Adventure and nature</option>
+              <option>Religious journey</option>
+            </select>
+          </label>
+          <label>
+            <span>Approximate budget</span>
+            <input type="text" name="budget" placeholder="Example: BDT 80,000">
+          </label>
+          <button class="btn btn-primary" type="submit">Send to WhatsApp</button>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div>
+        <a class="brand footer-brand" href="index.html">
+          <span class="brand-mark">ST</span>
+          <span>
+            <strong>Sohanur Travels</strong>
+            <small>Explore with confidence</small>
+          </span>
+        </a>
+        <p>Dark yellow energy, deep blue trust, and travel planning made smooth.</p>
+      </div>
+      <div>
+        <h3>Company</h3>
+        <ul>
+          <li><a href="about.html">About</a></li>
+          <li><a href="services.html">Services</a></li>
+          <li><a href="packages.html">Packages</a></li>
+          <li><a href="contact.html">Contact</a></li>
+        </ul>
+      </div>
+      <div>
+        <h3>Services</h3>
+        <ul>
+          <li>Air tickets</li>
+          <li>Tour packages</li>
+          <li>Visa assistance</li>
+          <li>Hotel booking</li>
+        </ul>
+      </div>
+      <div>
+        <h3>Contact</h3>
+        <ul>
+          <li><a href="mailto:booking@sohanurtravels.com">booking@sohanurtravels.com</a></li>
+          <li><a href="tel:+8801712345678">+880 1712-345678</a></li>
+          <li>Dhaka, Bangladesh</li>
+        </ul>
+      </div>
+    </div>
+    <div class="container footer-bottom">
+      <span>© <span data-year></span> Sohanur Travels. All rights reserved.</span>
+      <a href="#main">Back to top</a>
+    </div>
+  </footer>
+
+  <a class="whatsapp-float" data-whatsapp-link target="_blank" rel="noopener" aria-label="Chat with Sohanur Travels on WhatsApp">
+    <span>WhatsApp</span>
+    <strong>Chat now</strong>
+  </a>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
