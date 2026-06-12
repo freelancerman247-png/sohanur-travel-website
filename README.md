@@ -4,7 +4,8 @@ A responsive static travel agency website for Sohanur Travel. It includes a poli
 
 ## Features
 
-- Responsive hero, destination, package, about, review, booking, FAQ, and footer sections
+- Responsive hero, destination, package, about, review, booking, FAQ, contact, and footer sections
+- Dedicated `contact.html` page with unique travel desk layout and contact form
 - Mobile-friendly navigation menu
 - Package buttons that prefill the booking flow
 - Client-side booking form confirmation
@@ -23,5 +24,6 @@ Then visit `http://localhost:8000`.
 ## Project files
 
 - `index.html` - page markup and content
+- `contact.html` - dedicated contact page
 - `styles.css` - responsive layout and visual design
 - `script.js` - menu, package selection, sticky header, and form behavior

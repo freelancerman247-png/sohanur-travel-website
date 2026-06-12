@@ -2,8 +2,10 @@ const header = document.querySelector("[data-header]");
 const navToggle = document.querySelector("[data-nav-toggle]");
 const navMenu = document.querySelector("[data-nav-menu]");
 const bookingForm = document.querySelector("[data-booking-form]");
+const contactForm = document.querySelector("[data-contact-form]");
 const destinationSelect = document.querySelector("[data-destination-select]");
 const formStatus = document.querySelector("[data-form-status]");
+const contactStatus = document.querySelector("[data-contact-status]");
 const packageButtons = document.querySelectorAll("[data-package]");
 
 const closeMenu = () => {
@@ -69,6 +71,25 @@ bookingForm?.addEventListener("submit", (event) => {
   }
 
   bookingForm.reset();
+});
+
+contactForm?.addEventListener("submit", (event) => {
+  event.preventDefault();
+
+  if (!(contactForm instanceof HTMLFormElement) || !contactForm.checkValidity()) {
+    contactForm?.reportValidity();
+    return;
+  }
+
+  const formData = new FormData(contactForm);
+  const name = String(formData.get("name") || "Traveler").trim();
+  const service = String(formData.get("service") || "travel").trim();
+
+  if (contactStatus) {
+    contactStatus.textContent = `Thanks, ${name}. Your ${service} request is ready for the Sohanur Travel team.`;
+  }
+
+  contactForm.reset();
 });
 
 window.addEventListener("scroll", updateHeader, { passive: true });

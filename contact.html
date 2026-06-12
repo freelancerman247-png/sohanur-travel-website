@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Sohanur Travel for custom tours, flight help, visa guidance, hotel booking, and urgent travel support.">
+  <title>Contact Sohanur Travel | Start Your Journey</title>
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body class="contact-page">
+  <header class="site-header contact-header" data-header>
+    <nav class="navbar" aria-label="Primary navigation">
+      <a class="brand" href="index.html" aria-label="Sohanur Travel home">
+        <span class="brand-mark">ST</span>
+        <span>Sohanur Travel</span>
+      </a>
+
+      <button class="nav-toggle" type="button" aria-label="Open menu" aria-controls="primary-menu" aria-expanded="false" data-nav-toggle>
+        <span></span>
+        <span></span>
+        <span></span>
+      </button>
+
+      <div class="nav-links" id="primary-menu" data-nav-menu>
+        <a href="index.html#destinations">Destinations</a>
+        <a href="index.html#packages">Packages</a>
+        <a href="index.html#about">About</a>
+        <a href="index.html#reviews">Reviews</a>
+        <a class="active-link" href="contact.html">Contact</a>
+      </div>
+
+      <a class="nav-cta" href="#contact-form">Get Help</a>
+    </nav>
+  </header>
+
+  <main>
+    <section class="contact-hero">
+      <div class="contact-hero-content">
+        <p class="eyebrow">Contact our travel desk</p>
+        <h1>Your next trip starts with one message.</h1>
+        <p>
+          Ask about flights, hotels, visa support, immigration services, mobile recharge,
+          or a fully customized holiday plan. We will guide you with clear options.
+        </p>
+        <div class="contact-hero-actions">
+          <a class="button button-primary" href="#contact-form">Send Message</a>
+          <a class="button contact-whatsapp" href="https://wa.me/8801712345678" target="_blank" rel="noopener">WhatsApp Now</a>
+        </div>
+      </div>
+
+      <aside class="contact-orbit-card" aria-label="Sohanur Travel live support highlights">
+        <div class="orbit-ring"></div>
+        <div class="orbit-center">
+          <span>Live</span>
+          <strong>Support</strong>
+        </div>
+        <div class="orbit-chip orbit-chip-top">Flight</div>
+        <div class="orbit-chip orbit-chip-right">Visa</div>
+        <div class="orbit-chip orbit-chip-bottom">Hotel</div>
+        <div class="orbit-chip orbit-chip-left">Tour</div>
+      </aside>
+    </section>
+
+    <section class="contact-methods" aria-label="Contact methods">
+      <article class="contact-method-card">
+        <span class="method-icon">01</span>
+        <div>
+          <h2>Call us</h2>
+          <p>Speak directly with our travel support team.</p>
+          <a href="tel:+8801712345678">+880 1712-345678</a>
+        </div>
+      </article>
+      <article class="contact-method-card">
+        <span class="method-icon">02</span>
+        <div>
+          <h2>Email desk</h2>
+          <p>Send details for quotes, documents, or custom plans.</p>
+          <a href="mailto:hello@sohanurtravel.com">hello@sohanurtravel.com</a>
+        </div>
+      </article>
+      <article class="contact-method-card">
+        <span class="method-icon">03</span>
+        <div>
+          <h2>Office hours</h2>
+          <p>Saturday to Thursday, 9:00 AM to 8:00 PM.</p>
+          <strong>Emergency support available</strong>
+        </div>
+      </article>
+    </section>
+
+    <section class="contact-studio" id="contact-form">
+      <div class="contact-map-panel">
+        <p class="eyebrow">Travel studio</p>
+        <h2>Reach the team that builds the route.</h2>
+        <p>
+          Share your preferred service and destination. We will respond with the best travel
+          options, estimated budget, and next steps.
+        </p>
+
+        <div class="route-map" aria-label="Decorative travel route map">
+          <span class="map-dot map-dot-start"></span>
+          <span class="map-dot map-dot-middle"></span>
+          <span class="map-dot map-dot-end"></span>
+          <span class="route-line route-line-one"></span>
+          <span class="route-line route-line-two"></span>
+          <div class="map-card map-card-top">
+            <strong>Dhaka</strong>
+            <span>Travel desk</span>
+          </div>
+          <div class="map-card map-card-bottom">
+            <strong>Worldwide</strong>
+            <span>Flight, tour, visa</span>
+          </div>
+        </div>
+
+        <div class="contact-service-list">
+          <span>Flight ticketing</span>
+          <span>Train booking</span>
+          <span>Hotel reservation</span>
+          <span>Visa processing</span>
+          <span>Immigration service</span>
+          <span>Mobile recharge</span>
+        </div>
+      </div>
+
+      <form class="contact-message-card" data-contact-form>
+        <div class="form-heading">
+          <span>Quick request</span>
+          <h2>Send a message</h2>
+        </div>
+
+        <label>
+          Full name
+          <input type="text" name="name" autocomplete="name" required placeholder="Your full name">
+        </label>
+
+        <label>
+          Phone or email
+          <input type="text" name="contact" autocomplete="email" required placeholder="Your phone or email">
+        </label>
+
+        <div class="form-row">
+          <label>
+            Service
+            <select name="service" required>
+              <option value="">Choose service</option>
+              <option>Flight ticketing</option>
+              <option>Train booking</option>
+              <option>Hotel booking</option>
+              <option>Visa service</option>
+              <option>Immigration service</option>
+              <option>Custom travel package</option>
+            </select>
+          </label>
+          <label>
+            Travel date
+            <input type="date" name="date">
+          </label>
+        </div>
+
+        <label>
+          Message
+          <textarea name="message" rows="5" required placeholder="Tell us destination, number of travelers, budget, or document needs"></textarea>
+        </label>
+
+        <button class="button button-primary" type="submit">Submit Contact Request</button>
+        <p class="form-status" role="status" aria-live="polite" data-contact-status></p>
+      </form>
+    </section>
+
+    <section class="contact-faq-strip" aria-label="Contact page support details">
+      <div>
+        <span>Response promise</span>
+        <strong>Fast reply for urgent travel dates</strong>
+      </div>
+      <div>
+        <span>Documents</span>
+        <strong>Clear checklist before processing</strong>
+      </div>
+      <div>
+        <span>Payments</span>
+        <strong>Simple instructions after confirmation</strong>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer contact-footer">
+    <div>
+      <a class="brand" href="index.html">
+        <span class="brand-mark">ST</span>
+        <span>Sohanur Travel</span>
+      </a>
+      <p>Flight, hotel, visa, tour, and travel support from one friendly desk.</p>
+    </div>
+    <div class="footer-links">
+      <a href="index.html">Home</a>
+      <a href="index.html#packages">Packages</a>
+      <a href="#contact-form">Message</a>
+    </div>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
