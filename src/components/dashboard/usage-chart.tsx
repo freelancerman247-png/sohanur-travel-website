@@ -1,6 +1,7 @@
 "use client";
 
 import { useQuery } from "@tanstack/react-query";
+import { useEffect, useState } from "react";
 import {
   Area,
   AreaChart,
@@ -28,10 +29,15 @@ async function getUsageData() {
 }
 
 export function UsageChart() {
+  const [isMounted, setIsMounted] = useState(false);
   const { data = fallbackUsageData, isFetching } = useQuery({
     queryKey: ["tenant-usage-chart"],
     queryFn: getUsageData
   });
+
+  useEffect(() => {
+    setIsMounted(true);
+  }, []);
 
   return (
     <Card>
@@ -48,47 +54,53 @@ export function UsageChart() {
       </CardHeader>
       <CardContent>
         <div className="h-[300px] w-full">
-          <ResponsiveContainer height="100%" width="100%">
-            <AreaChart data={data} margin={{ left: -18, right: 8, top: 10 }}>
-              <defs>
-                <linearGradient id="apiCalls" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="5%" stopColor="#2fe6a7" stopOpacity={0.45} />
-                  <stop offset="95%" stopColor="#2fe6a7" stopOpacity={0} />
-                </linearGradient>
-                <linearGradient id="revenue" x1="0" x2="0" y1="0" y2="1">
-                  <stop offset="5%" stopColor="#65b7ff" stopOpacity={0.38} />
-                  <stop offset="95%" stopColor="#65b7ff" stopOpacity={0} />
-                </linearGradient>
-              </defs>
-              <CartesianGrid stroke="rgba(255,255,255,0.08)" strokeDasharray="3 3" />
-              <XAxis dataKey="day" stroke="#94a3b8" tickLine={false} />
-              <YAxis stroke="#94a3b8" tickLine={false} />
-              <Tooltip
-                contentStyle={{
-                  background: "#0f172a",
-                  border: "1px solid rgba(255,255,255,0.14)",
-                  borderRadius: 16,
-                  color: "#f8fafc"
-                }}
-              />
-              <Area
-                dataKey="apiCalls"
-                fill="url(#apiCalls)"
-                name="API calls"
-                stroke="#2fe6a7"
-                strokeWidth={3}
-                type="monotone"
-              />
-              <Area
-                dataKey="revenue"
-                fill="url(#revenue)"
-                name="Revenue"
-                stroke="#65b7ff"
-                strokeWidth={3}
-                type="monotone"
-              />
-            </AreaChart>
-          </ResponsiveContainer>
+          {isMounted ? (
+            <ResponsiveContainer height="100%" width="100%">
+              <AreaChart data={data} margin={{ left: -18, right: 8, top: 10 }}>
+                <defs>
+                  <linearGradient id="apiCalls" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="5%" stopColor="#2fe6a7" stopOpacity={0.45} />
+                    <stop offset="95%" stopColor="#2fe6a7" stopOpacity={0} />
+                  </linearGradient>
+                  <linearGradient id="revenue" x1="0" x2="0" y1="0" y2="1">
+                    <stop offset="5%" stopColor="#65b7ff" stopOpacity={0.38} />
+                    <stop offset="95%" stopColor="#65b7ff" stopOpacity={0} />
+                  </linearGradient>
+                </defs>
+                <CartesianGrid stroke="rgba(255,255,255,0.08)" strokeDasharray="3 3" />
+                <XAxis dataKey="day" stroke="#94a3b8" tickLine={false} />
+                <YAxis stroke="#94a3b8" tickLine={false} />
+                <Tooltip
+                  contentStyle={{
+                    background: "#0f172a",
+                    border: "1px solid rgba(255,255,255,0.14)",
+                    borderRadius: 16,
+                    color: "#f8fafc"
+                  }}
+                />
+                <Area
+                  dataKey="apiCalls"
+                  fill="url(#apiCalls)"
+                  name="API calls"
+                  stroke="#2fe6a7"
+                  strokeWidth={3}
+                  type="monotone"
+                />
+                <Area
+                  dataKey="revenue"
+                  fill="url(#revenue)"
+                  name="Revenue"
+                  stroke="#65b7ff"
+                  strokeWidth={3}
+                  type="monotone"
+                />
+              </AreaChart>
+            </ResponsiveContainer>
+          ) : (
+            <div className="grid h-full place-items-center rounded-3xl border border-white/10 bg-white/5 text-sm text-slate-400">
+              Loading chart...
+            </div>
+          )}
         </div>
       </CardContent>
     </Card>
