@@ -3,158 +3,156 @@
   <head>
     <meta charset="utf-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
-    <title>RechargeHub API - Multi Recharge & Lapu Management</title>
+    <title>RoboticAPI Recharge Software</title>
     <meta
       name="description"
-      content="Multi recharge business platform for API resellers, Lapu SIM management, DTH recharge routing, and company integrations."
+      content="Professional multi recharge API software with admin dashboard, customer signup, login, wallet, Lapu routing, and API documentation."
     />
     <link rel="stylesheet" href="src/styles.css" />
   </head>
   <body>
-    <div class="app-shell">
-      <aside class="sidebar" id="sidebar" aria-label="Primary navigation">
-        <div class="brand">
-          <div class="brand-mark">RH</div>
+    <section class="auth-shell" id="authShell">
+      <div class="auth-hero">
+        <div class="brand-row">
+          <div class="brand-mark">RA</div>
           <div>
-            <strong>RechargeHub</strong>
-            <span>API Provider Panel</span>
+            <strong>RoboticAPI</strong>
+            <span>Multi Recharge Business Software</span>
           </div>
         </div>
+        <h1>Run your own recharge API company.</h1>
+        <p>
+          Manage Airtel, Vi, BSNL and DTH Lapu routes, onboard client companies,
+          give API keys, track wallets, and monitor every recharge from one panel.
+        </p>
+        <div class="auth-highlights">
+          <span>Admin Dashboard</span>
+          <span>Customer Signup/Login</span>
+          <span>Client Dashboard</span>
+          <span>API Documentation</span>
+        </div>
+      </div>
 
-        <button class="close-menu" id="closeMenu" aria-label="Close menu">&times;</button>
+      <div class="auth-card">
+        <div class="auth-tabs">
+          <button class="auth-tab active" data-auth-tab="login">Login</button>
+          <button class="auth-tab" data-auth-tab="signup">Customer Signup</button>
+        </div>
 
-        <nav class="nav-menu">
-          <button class="nav-link active" data-view="dashboard">
-            <span>⌁</span>
-            Dashboard
-          </button>
+        <form class="auth-form active" id="loginForm">
+          <h2>Login to panel</h2>
+          <p class="muted">Demo admin: <strong>admin@roboticapi.in</strong> / <strong>admin123</strong></p>
+          <label>
+            Email
+            <input name="email" type="email" required placeholder="admin@roboticapi.in" />
+          </label>
+          <label>
+            Password
+            <input name="password" type="password" required placeholder="Enter password" />
+          </label>
+          <button class="primary-button full-width" type="submit">Login</button>
+        </form>
 
-          <div class="nav-group">
-            <button class="nav-link nav-parent" data-view="lapu">
-              <span>◈</span>
-              Lapu
-              <small>⌄</small>
-            </button>
-            <button class="nav-child" data-view="lapu">Add Lapu</button>
-            <button class="nav-child" data-view="lapu">Lapu List</button>
-            <button class="nav-child" data-view="lapu">Lapu Settings</button>
-            <button class="nav-child" data-view="lapu">Scheduler</button>
-            <button class="nav-child" data-view="lapu">Lapu Groups</button>
-            <button class="nav-child" data-view="lapu">DTH State Editor</button>
+        <form class="auth-form" id="signupForm">
+          <h2>Create customer account</h2>
+          <p class="muted">For recharge companies who want to use your API.</p>
+          <label>
+            Company Name
+            <input name="company" required placeholder="Example Recharge Pvt Ltd" />
+          </label>
+          <label>
+            Owner Name
+            <input name="owner" required placeholder="Owner full name" />
+          </label>
+          <label>
+            Mobile Number
+            <input name="mobile" required inputmode="numeric" placeholder="9876543210" />
+          </label>
+          <label>
+            Email
+            <input name="email" type="email" required placeholder="owner@example.com" />
+          </label>
+          <label>
+            Password
+            <input name="password" type="password" required minlength="6" placeholder="Minimum 6 characters" />
+          </label>
+          <button class="primary-button full-width" type="submit">Create Client Account</button>
+        </form>
+      </div>
+    </section>
+
+    <div class="app-shell hidden" id="adminApp">
+      <aside class="sidebar" aria-label="Admin navigation">
+        <div class="brand-row">
+          <div class="brand-mark">RA</div>
+          <div>
+            <strong>RoboticAPI</strong>
+            <span>Admin Panel</span>
           </div>
-
-          <button class="nav-link" data-view="companies">
-            <span>▣</span>
-            Companies
-          </button>
-          <button class="nav-link" data-view="orders">
-            <span>▤</span>
-            Recharge Orders
-          </button>
-          <button class="nav-link" data-view="reports">
-            <span>▥</span>
-            Reports
-          </button>
-          <button class="nav-link" data-view="settings">
-            <span>▢</span>
-            Settings
-          </button>
-          <button class="nav-link" data-view="plans">
-            <span>✓</span>
-            Plans
-          </button>
-          <button class="nav-link" data-view="api">
-            <span>◇</span>
-            API Documentation
-          </button>
-          <button class="nav-link" data-view="features">
-            <span>♙</span>
-            Features
-          </button>
+        </div>
+        <nav class="nav-menu">
+          <button class="nav-link active" data-admin-view="adminDashboard">Dashboard</button>
+          <button class="nav-link" data-admin-view="lapu">Lapu SIM / DTH</button>
+          <button class="nav-link" data-admin-view="companies">Clients</button>
+          <button class="nav-link" data-admin-view="orders">Recharge Orders</button>
+          <button class="nav-link" data-admin-view="reports">Reports</button>
+          <button class="nav-link" data-admin-view="apiDocs">API Documentation</button>
         </nav>
       </aside>
 
-      <div class="overlay" id="overlay"></div>
-
       <main class="main-content">
         <header class="topbar">
-          <button class="menu-toggle" id="openMenu" aria-label="Open menu">☰</button>
           <div>
-            <p class="eyebrow">Multi Recharge Business Software</p>
-            <h1 id="pageTitle">Dashboard</h1>
+            <p class="eyebrow">Admin Dashboard</p>
+            <h1 id="adminTitle">Dashboard</h1>
           </div>
           <div class="topbar-actions">
             <label class="search">
-              <span>⌕</span>
-              <input id="globalSearch" type="search" placeholder="Search mobile, company, operator" />
+              <span>Search</span>
+              <input id="adminSearch" type="search" placeholder="Client, mobile, operator" />
             </label>
-            <button class="icon-button" aria-label="Notifications">🔔</button>
-            <div class="profile">
-              <span class="avatar">SR</span>
-              <div>
-                <strong>Super Admin</strong>
-                <small>API Owner</small>
-              </div>
-            </div>
+            <div class="profile"><span class="avatar">AD</span><strong>Super Admin</strong></div>
+            <button class="ghost-button" data-logout>Logout</button>
           </div>
         </header>
 
-        <section class="view active" id="dashboard">
+        <section class="view active" id="adminDashboard">
           <div class="hero-card">
             <div>
-              <p class="eyebrow">Built for recharge API providers</p>
-              <h2>Sell one API to many recharge companies.</h2>
+              <p class="eyebrow">Business control center</p>
+              <h2>Sell recharge API service to many client companies.</h2>
               <p>
-                Add Airtel, Vi, BSNL and DTH Lapu SIMs, route orders from partner
-                panels, monitor balance, and share simple REST API documentation.
+                Add Lapu routes, approve customers, monitor wallet balances and
+                route mobile/DTH recharges from one professional dashboard.
               </p>
             </div>
-            <div class="hero-actions">
-              <button class="primary-button" data-jump="companies">Onboard Company</button>
-              <button class="ghost-button" data-jump="api">View API Docs</button>
-            </div>
+            <button class="primary-button" data-admin-jump="companies">Add Client</button>
           </div>
-
-          <div class="stats-grid" id="statsGrid"></div>
-
+          <div class="stats-grid" id="adminStats"></div>
           <div class="dashboard-grid">
             <article class="panel">
               <div class="panel-header">
                 <div>
-                  <p class="eyebrow">Manual test</p>
-                  <h3>Recharge Order</h3>
+                  <p class="eyebrow">Quick action</p>
+                  <h3>Create Recharge</h3>
                 </div>
-                <span class="status-pill live">Live Router</span>
               </div>
-              <form class="form-grid" id="rechargeForm">
-                <label>
-                  Mobile / Customer ID
-                  <input name="mobile" required inputmode="numeric" minlength="6" placeholder="9876543210" />
-                </label>
-                <label>
-                  Operator
-                  <select name="operator" required id="rechargeOperator"></select>
-                </label>
-                <label>
-                  Amount
-                  <input name="amount" required type="number" min="1" placeholder="199" />
-                </label>
-                <label>
-                  Source Company
-                  <select name="company" required id="rechargeCompany"></select>
-                </label>
-                <button class="primary-button full-width" type="submit">Create Recharge Order</button>
+              <form class="form-grid" id="adminRechargeForm">
+                <label>Mobile / Customer ID<input name="mobile" required inputmode="numeric" placeholder="9876543210" /></label>
+                <label>Operator<select name="operator" required id="adminOperator"></select></label>
+                <label>Amount<input name="amount" required type="number" min="1" placeholder="199" /></label>
+                <label>Client<select name="company" required id="adminCompany"></select></label>
+                <button class="primary-button full-width" type="submit">Process Recharge</button>
               </form>
             </article>
-
             <article class="panel">
               <div class="panel-header">
                 <div>
-                  <p class="eyebrow">Routing health</p>
-                  <h3>Active Lapu Lines</h3>
+                  <p class="eyebrow">Low balance alert</p>
+                  <h3>Lapu Health</h3>
                 </div>
               </div>
-              <div class="compact-list" id="activeLapuList"></div>
+              <div class="compact-list" id="lapuHealth"></div>
             </article>
           </div>
         </section>
@@ -162,82 +160,39 @@
         <section class="view" id="lapu">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">SIM and DTH management</p>
-              <h2>Add Lapu SIMs and assign routing capacity</h2>
+              <p class="eyebrow">Lapu routing</p>
+              <h2>Add Airtel, Vi, BSNL and DTH Lapu lines</h2>
             </div>
+            <button class="ghost-button" id="resetDemo">Reset Demo Data</button>
           </div>
-
           <div class="dashboard-grid">
             <article class="panel">
-              <div class="panel-header">
-                <div>
-                  <p class="eyebrow">Add Lapu</p>
-                  <h3>New Lapu Line</h3>
-                </div>
-              </div>
+              <h3>Add Lapu Line</h3>
               <form class="form-grid" id="lapuForm">
-                <label>
-                  Provider
-                  <select name="provider" required>
-                    <option>Airtel Lapu SIM</option>
-                    <option>Vi Lapu SIM</option>
-                    <option>BSNL Lapu SIM</option>
-                    <option>Jio Retailer SIM</option>
-                    <option>Airtel Digital TV Lapu</option>
-                    <option>Tata Play Lapu</option>
-                    <option>Dish TV Lapu</option>
-                    <option>D2H Lapu</option>
-                    <option>Sun Direct Lapu</option>
-                  </select>
-                </label>
-                <label>
-                  Service Type
-                  <select name="type" required>
-                    <option>Mobile Recharge</option>
-                    <option>DTH Recharge</option>
-                  </select>
-                </label>
-                <label>
-                  Lapu Mobile Number
-                  <input name="number" required inputmode="numeric" placeholder="Enter Lapu SIM number" />
-                </label>
-                <label>
-                  Opening Balance
-                  <input name="balance" required type="number" min="0" placeholder="5000" />
-                </label>
-                <label>
-                  Daily Limit
-                  <input name="limit" required type="number" min="1" placeholder="50000" />
-                </label>
-                <label>
-                  State / Circle
-                  <input name="circle" required placeholder="All India / Bihar / UP East" />
-                </label>
-                <button class="primary-button full-width" type="submit">Save Lapu Line</button>
+                <label>Provider<select name="provider" required>
+                  <option>Airtel Lapu SIM</option>
+                  <option>Vi Lapu SIM</option>
+                  <option>BSNL Lapu SIM</option>
+                  <option>Jio Retailer SIM</option>
+                  <option>Airtel Digital TV Lapu</option>
+                  <option>Tata Play Lapu</option>
+                  <option>Dish TV Lapu</option>
+                  <option>D2H Lapu</option>
+                  <option>Sun Direct Lapu</option>
+                </select></label>
+                <label>Service Type<select name="type" required><option>Mobile Recharge</option><option>DTH Recharge</option></select></label>
+                <label>Lapu Number<input name="number" required inputmode="numeric" placeholder="Lapu SIM number" /></label>
+                <label>Opening Balance<input name="balance" required type="number" min="0" placeholder="5000" /></label>
+                <label>Daily Limit<input name="limit" required type="number" min="1" placeholder="50000" /></label>
+                <label>State / Circle<input name="circle" required placeholder="All India" /></label>
+                <button class="primary-button full-width" type="submit">Save Lapu</button>
               </form>
             </article>
-
             <article class="panel wide-panel">
-              <div class="panel-header">
-                <div>
-                  <p class="eyebrow">Lapu List</p>
-                  <h3>Recharge Routing Inventory</h3>
-                </div>
-                <button class="ghost-button" id="resetDemoData" type="button">Reset Demo Data</button>
-              </div>
+              <h3>Lapu Inventory</h3>
               <div class="table-wrap">
                 <table>
-                  <thead>
-                    <tr>
-                      <th>Provider</th>
-                      <th>Number</th>
-                      <th>Type</th>
-                      <th>Circle</th>
-                      <th>Balance</th>
-                      <th>Limit</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
+                  <thead><tr><th>Provider</th><th>Number</th><th>Type</th><th>Circle</th><th>Balance</th><th>Limit</th><th>Status</th></tr></thead>
                   <tbody id="lapuTable"></tbody>
                 </table>
               </div>
@@ -248,55 +203,26 @@
         <section class="view" id="companies">
           <div class="section-heading">
             <div>
-              <p class="eyebrow">API customers</p>
-              <h2>Onboard recharge companies and issue API keys</h2>
+              <p class="eyebrow">Client management</p>
+              <h2>Approve customers and issue API access</h2>
             </div>
           </div>
           <div class="dashboard-grid">
             <article class="panel">
-              <div class="panel-header">
-                <div>
-                  <p class="eyebrow">New integration</p>
-                  <h3>Company Access</h3>
-                </div>
-              </div>
+              <h3>Add Client Manually</h3>
               <form class="form-grid" id="companyForm">
-                <label>
-                  Company Name
-                  <input name="name" required placeholder="Example Recharge Pvt Ltd" />
-                </label>
-                <label>
-                  Contact Email
-                  <input name="email" required type="email" placeholder="owner@example.com" />
-                </label>
-                <label>
-                  Callback URL
-                  <input name="callbackUrl" required type="url" placeholder="https://client-panel.com/callback" />
-                </label>
-                <label>
-                  IP Whitelist
-                  <input name="ipWhitelist" required placeholder="103.10.20.30, 103.10.20.31" />
-                </label>
+                <label>Company Name<input name="name" required placeholder="Client company" /></label>
+                <label>Owner Email<input name="email" type="email" required placeholder="owner@example.com" /></label>
+                <label>Callback URL<input name="callbackUrl" type="url" placeholder="https://client.com/callback" /></label>
+                <label>Opening Wallet<input name="wallet" type="number" min="0" value="1000" /></label>
                 <button class="primary-button full-width" type="submit">Generate API Key</button>
               </form>
             </article>
             <article class="panel wide-panel">
-              <div class="panel-header">
-                <div>
-                  <p class="eyebrow">Partners</p>
-                  <h3>Integrated Companies</h3>
-                </div>
-              </div>
+              <h3>Client Companies</h3>
               <div class="table-wrap">
                 <table>
-                  <thead>
-                    <tr>
-                      <th>Company</th>
-                      <th>API Key</th>
-                      <th>Callback</th>
-                      <th>Status</th>
-                    </tr>
-                  </thead>
+                  <thead><tr><th>Company</th><th>API Key</th><th>Wallet</th><th>Callback</th><th>Status</th></tr></thead>
                   <tbody id="companyTable"></tbody>
                 </table>
               </div>
@@ -308,123 +234,162 @@
           <div class="section-heading">
             <div>
               <p class="eyebrow">Transactions</p>
-              <h2>Recharge order monitoring</h2>
+              <h2>All recharge orders</h2>
             </div>
           </div>
           <article class="panel">
-            <div class="panel-header">
-              <div>
-                <p class="eyebrow">Live orders</p>
-                <h3>Recent API and Manual Recharges</h3>
-              </div>
-            </div>
             <div class="table-wrap">
               <table>
-                <thead>
-                  <tr>
-                    <th>Txn ID</th>
-                    <th>Mobile / ID</th>
-                    <th>Operator</th>
-                    <th>Amount</th>
-                    <th>Company</th>
-                    <th>Routed By</th>
-                    <th>Status</th>
-                  </tr>
-                </thead>
+                <thead><tr><th>Txn ID</th><th>Mobile / ID</th><th>Operator</th><th>Amount</th><th>Client</th><th>Routed By</th><th>Status</th></tr></thead>
                 <tbody id="orderTable"></tbody>
               </table>
             </div>
           </article>
         </section>
 
-        <section class="view" id="api">
+        <section class="view" id="reports">
+          <div class="stats-grid" id="reportStats"></div>
+          <article class="panel">
+            <h3>Business Report</h3>
+            <p class="muted">
+              Track total sales, client wallet balance, successful orders, low
+              balance Lapu lines, and pending recharge cases.
+            </p>
+          </article>
+        </section>
+
+        <section class="view" id="apiDocs">
           <div class="section-heading">
             <div>
               <p class="eyebrow">Developer documentation</p>
-              <h2>REST API for client company panels</h2>
-              <p>
-                Give this documentation to companies that want to integrate your
-                recharge service into their own software.
-              </p>
+              <h2>Give this API guide to your clients</h2>
             </div>
           </div>
           <div class="api-grid">
-            <article class="panel">
-              <h3>Authentication</h3>
-              <p>
-                Every request must include the API key generated from the
-                Companies section. IP whitelist and callback URL should be
-                configured before production use.
-              </p>
-              <pre><code>Authorization: Bearer rh_live_company_api_key
-Content-Type: application/json</code></pre>
-            </article>
+            <article class="panel"><h3>Auth Header</h3><pre><code>Authorization: Bearer rh_live_client_api_key
+Content-Type: application/json</code></pre></article>
+            <article class="panel"><h3>Create Recharge</h3><p><strong>POST</strong> /api/v1/recharge</p><pre><code>{
+  "client_txn_id": "CLIENT123",
+  "service": "mobile",
+  "operator": "airtel",
+  "number": "9876543210",
+  "amount": 199
+}</code></pre></article>
+            <article class="panel"><h3>Check Status</h3><p><strong>GET</strong> /api/v1/recharge/status?txn_id=RH10001</p><pre><code>{
+  "txn_id": "RH10001",
+  "status": "success",
+  "operator_ref": "OPR984562"
+}</code></pre></article>
+            <article class="panel"><h3>Callback</h3><pre><code>{
+  "client_txn_id": "CLIENT123",
+  "txn_id": "RH10001",
+  "status": "success",
+  "message": "Recharge completed"
+}</code></pre></article>
+          </div>
+        </section>
+      </main>
+    </div>
+
+    <div class="app-shell hidden" id="clientApp">
+      <aside class="sidebar client-sidebar" aria-label="Client navigation">
+        <div class="brand-row">
+          <div class="brand-mark">CL</div>
+          <div>
+            <strong id="clientBrand">Client Panel</strong>
+            <span>Customer Dashboard</span>
+          </div>
+        </div>
+        <nav class="nav-menu">
+          <button class="nav-link active" data-client-view="clientDashboard">Dashboard</button>
+          <button class="nav-link" data-client-view="clientRecharge">New Recharge</button>
+          <button class="nav-link" data-client-view="clientOrders">My Orders</button>
+          <button class="nav-link" data-client-view="clientApi">My API</button>
+          <button class="nav-link" data-client-view="clientProfile">Profile</button>
+        </nav>
+      </aside>
+
+      <main class="main-content">
+        <header class="topbar">
+          <div>
+            <p class="eyebrow">Client Dashboard</p>
+            <h1 id="clientTitle">Dashboard</h1>
+          </div>
+          <div class="topbar-actions">
+            <div class="profile"><span class="avatar">CU</span><strong id="clientNameTop">Customer</strong></div>
+            <button class="ghost-button" data-logout>Logout</button>
+          </div>
+        </header>
+
+        <section class="view active" id="clientDashboard">
+          <div class="hero-card">
+            <div>
+              <p class="eyebrow">Welcome to your recharge panel</p>
+              <h2 id="clientWelcome">Client Dashboard</h2>
+              <p>Use your wallet and API key to send mobile and DTH recharge requests.</p>
+            </div>
+            <button class="primary-button" data-client-jump="clientRecharge">Start Recharge</button>
+          </div>
+          <div class="stats-grid" id="clientStats"></div>
+        </section>
+
+        <section class="view" id="clientRecharge">
+          <div class="dashboard-grid">
             <article class="panel">
               <h3>Create Recharge</h3>
-              <p><strong>POST</strong> /api/v1/recharge</p>
-              <pre><code>{
-  "client_txn_id": "CLIENT12345",
-  "service": "mobile",
+              <form class="form-grid" id="clientRechargeForm">
+                <label>Mobile / Customer ID<input name="mobile" required inputmode="numeric" placeholder="9876543210" /></label>
+                <label>Operator<select name="operator" required id="clientOperator"></select></label>
+                <label>Amount<input name="amount" required type="number" min="1" placeholder="199" /></label>
+                <button class="primary-button full-width" type="submit">Recharge from Wallet</button>
+              </form>
+            </article>
+            <article class="panel">
+              <h3>Wallet</h3>
+              <p class="wallet-amount" id="clientWalletAmount">₹0</p>
+              <button class="ghost-button" id="demoTopup">Add Demo ₹5,000</button>
+            </article>
+          </div>
+        </section>
+
+        <section class="view" id="clientOrders">
+          <article class="panel">
+            <h3>My Recharge Orders</h3>
+            <div class="table-wrap">
+              <table>
+                <thead><tr><th>Txn ID</th><th>Mobile / ID</th><th>Operator</th><th>Amount</th><th>Routed By</th><th>Status</th></tr></thead>
+                <tbody id="clientOrderTable"></tbody>
+              </table>
+            </div>
+          </article>
+        </section>
+
+        <section class="view" id="clientApi">
+          <div class="api-grid">
+            <article class="panel">
+              <h3>Your API Key</h3>
+              <pre><code id="clientApiKey"></code></pre>
+              <p class="muted">Use this key in the Authorization header from your own panel.</p>
+            </article>
+            <article class="panel">
+              <h3>API Recharge Example</h3>
+              <pre><code>POST /api/v1/recharge
+Authorization: Bearer YOUR_API_KEY
+
+{
   "operator": "airtel",
   "number": "9876543210",
   "amount": 199
 }</code></pre>
             </article>
-            <article class="panel">
-              <h3>Check Status</h3>
-              <p><strong>GET</strong> /api/v1/recharge/status?txn_id=RH1001</p>
-              <pre><code>{
-  "txn_id": "RH1001",
-  "status": "success",
-  "operator_ref": "OPR984562",
-  "amount": 199
-}</code></pre>
-            </article>
-            <article class="panel">
-              <h3>Callback Response</h3>
-              <p>Your system posts final status to the client callback URL.</p>
-              <pre><code>{
-  "client_txn_id": "CLIENT12345",
-  "txn_id": "RH1001",
-  "status": "success",
-  "message": "Recharge completed"
-}</code></pre>
-            </article>
           </div>
         </section>
 
-        <section class="view" id="reports">
-          <div class="placeholder-panel">
-            <h2>Reports</h2>
-            <p>Daily sales, company-wise commission, failed transactions, and Lapu usage reports are ready to connect to a backend database.</p>
-          </div>
-        </section>
-
-        <section class="view" id="settings">
-          <div class="placeholder-panel">
-            <h2>Settings</h2>
-            <p>Configure routing priority, retry rules, operator commissions, callback security, and admin users from this module.</p>
-          </div>
-        </section>
-
-        <section class="view" id="plans">
-          <div class="placeholder-panel">
-            <h2>Plans</h2>
-            <p>Publish operator plans and DTH packages so partner companies can display fresh recharge packs in their panels.</p>
-          </div>
-        </section>
-
-        <section class="view" id="features">
-          <div class="placeholder-panel">
-            <h2>Feature Roadmap</h2>
-            <ul class="feature-list">
-              <li>API reseller onboarding with wallet limits and settlement reports.</li>
-              <li>Airtel, Vi, BSNL, Jio, Tata Play, Dish TV, D2H, and Sun Direct Lapu routing.</li>
-              <li>Automatic retry rules when one Lapu balance is low or unavailable.</li>
-              <li>Callback signing, IP whitelist, and transaction reconciliation.</li>
-              <li>Admin, company, and operator role-based access control.</li>
-            </ul>
-          </div>
+        <section class="view" id="clientProfile">
+          <article class="panel">
+            <h3>Company Profile</h3>
+            <div class="profile-grid" id="clientProfileDetails"></div>
+          </article>
         </section>
       </main>
     </div>

@@ -9,7 +9,12 @@ const files = {
 };
 
 const expectations = [
-  ["dashboard title", files.html.includes("Multi Recharge Business Software")],
+  ["software title", files.html.includes("RoboticAPI Recharge Software")],
+  ["login form", files.html.includes('id="loginForm"') && files.js.includes("function login")],
+  ["customer signup form", files.html.includes('id="signupForm"') && files.js.includes("function signup")],
+  ["admin dashboard", files.html.includes('id="adminDashboard"') && files.js.includes("renderAdmin")],
+  ["client dashboard", files.html.includes('id="clientDashboard"') && files.js.includes("renderClient")],
+  ["wallet handling", files.html.includes("Wallet") && files.js.includes("company.wallet")],
   ["Airtel Lapu support", files.html.includes("Airtel Lapu SIM") && files.js.includes("Airtel Lapu SIM")],
   ["Vi Lapu support", files.html.includes("Vi Lapu SIM") && files.js.includes("Vi Lapu SIM")],
   ["BSNL Lapu support", files.html.includes("BSNL Lapu SIM") && files.js.includes("BSNL Lapu SIM")],

@@ -1,8 +1,8 @@
 {
-  "name": "rechargehub-api-platform",
+  "name": "roboticapi-recharge-software",
   "version": "0.1.0",
   "private": true,
-  "description": "Static prototype for a multi recharge API provider panel with Lapu SIM and DTH routing management.",
+  "description": "Static professional recharge software prototype with admin login, customer signup, client dashboard, wallet, API keys, and Lapu routing.",
   "scripts": {
     "start": "python3 -m http.server 4173",
     "test": "node tests/smoke-test.js"
