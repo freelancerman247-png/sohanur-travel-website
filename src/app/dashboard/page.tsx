@@ -1,5 +1,7 @@
 import type { Metadata } from "next";
 import { Activity, ArrowUpRight, CircleDollarSign } from "lucide-react";
+import { UsageChart } from "@/components/dashboard/usage-chart";
+import { Button } from "@/components/ui/button";
 import {
   dashboardMetrics,
   providerHealth,
@@ -10,7 +12,7 @@ import {
 
 export const metadata: Metadata = {
   title: "Tenant Dashboard",
-  description: "Tenant operations dashboard for Sohanur Cloud."
+  description: "Tenant operations dashboard for RoboticAPI Cloud."
 };
 
 export default function DashboardPage() {
@@ -44,6 +46,10 @@ export default function DashboardPage() {
             <span className="status-pill">{metric.trend}</span>
           </article>
         ))}
+      </section>
+
+      <section style={{ marginTop: 28 }}>
+        <UsageChart />
       </section>
 
       <section className="grid data-grid section" style={{ paddingBottom: 0 }}>
@@ -111,10 +117,10 @@ export default function DashboardPage() {
               {quickActions.map((action) => {
                 const Icon = action.icon;
                 return (
-                  <button className="button secondary" key={action.label} type="button">
+                  <Button key={action.label} type="button" variant="secondary">
                     <Icon size={18} />
                     {action.label}
-                  </button>
+                  </Button>
                 );
               })}
             </div>

@@ -8,6 +8,6 @@ export default defineConfig({
   datasource: {
     url:
       process.env.DATABASE_URL ??
-      "postgresql://postgres:postgres@localhost:5432/sohanur_saas?schema=public"
+      "postgresql://postgres:postgres@localhost:5432/roboticapi_saas?schema=public"
   }
 });

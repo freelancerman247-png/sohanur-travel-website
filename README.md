@@ -1,4 +1,4 @@
-# Sohanur Cloud
+# RoboticAPI Cloud
 
 Production-ready starter for a multi-tenant SaaS platform inspired by
 MRobotics-style B2B automation businesses: recharge APIs, WhatsApp messaging,
@@ -7,8 +7,11 @@ white-label tenant portals.
 
 ## Stack
 
-- Next.js App Router with TypeScript
-- Responsive CSS design system with dark enterprise UI
+- Next.js 15 App Router with React and TypeScript
+- Tailwind CSS with shadcn-style UI components
+- React Hook Form and Zod for validated forms
+- TanStack Query for client data orchestration
+- Recharts for dashboard analytics
 - Prisma schema for PostgreSQL tenant isolation
 - JWT/API-key security primitives using `jose` and Node crypto
 - Middleware-based tenant resolution and protected platform/API surfaces
@@ -24,6 +27,17 @@ npm run dev
 ```
 
 Open `http://localhost:3000` for the marketing site.
+
+## Upload and deployment guide
+
+For `roboticapi.in` on Hostinger, read
+[`docs/deployment-hostinger.md`](docs/deployment-hostinger.md).
+
+Important: this is a server-rendered Next.js SaaS app with API routes,
+middleware, and Prisma. Do not upload it directly into Hostinger `public_html`
+unless you intentionally convert it to a static-only website. Use a Node.js host
+such as Vercel/Render/Railway and point Hostinger DNS to it, or deploy on a
+Hostinger VPS/Node-capable hosting plan.
 
 ## Scripts
 

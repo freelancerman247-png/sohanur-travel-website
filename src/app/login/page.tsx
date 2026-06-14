@@ -3,7 +3,7 @@ import Link from "next/link";
 
 export const metadata: Metadata = {
   title: "Login",
-  description: "Sign in to your Sohanur Cloud tenant workspace."
+  description: "Sign in to your RoboticAPI Cloud tenant workspace."
 };
 
 export default function LoginPage() {

@@ -6,7 +6,7 @@ import { plans } from "@/data/platform";
 export const metadata: Metadata = {
   title: "Pricing",
   description:
-    "Pricing plans for Sohanur Cloud multi-tenant reseller automation SaaS."
+    "Pricing plans for RoboticAPI Cloud multi-tenant reseller automation SaaS."
 };
 
 export default function PricingPage() {

@@ -1,16 +1,17 @@
 import type { Metadata, Viewport } from "next";
 import Link from "next/link";
 import { ShieldCheck } from "lucide-react";
+import { Providers } from "@/app/providers";
 import "./globals.css";
 
 export const metadata: Metadata = {
   title: {
-    default: "Sohanur Cloud | Multi-tenant automation SaaS",
-    template: "%s | Sohanur Cloud"
+    default: "RoboticAPI Cloud | Multi-tenant automation SaaS",
+    template: "%s | RoboticAPI Cloud"
   },
   description:
     "Enterprise-grade multi-tenant SaaS for recharge, travel, WhatsApp, utility, and reseller API automation.",
-  applicationName: "Sohanur Cloud",
+  applicationName: "RoboticAPI Cloud",
   metadataBase: new URL(process.env.APP_URL ?? "http://localhost:3000")
 };
 
@@ -39,7 +40,7 @@ export default function RootLayout({
           <div className="container nav">
             <Link className="brand" href="/">
               <span className="brand-mark">SC</span>
-              <span>Sohanur Cloud</span>
+              <span>RoboticAPI Cloud</span>
             </Link>
             <nav className="nav-links" aria-label="Primary navigation">
               {navItems.map((item) => (
@@ -59,7 +60,7 @@ export default function RootLayout({
             </div>
           </div>
         </header>
-        {children}
+        <Providers>{children}</Providers>
       </body>
     </html>
   );

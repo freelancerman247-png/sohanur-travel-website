@@ -21,7 +21,7 @@ export default function HomePage() {
           <span className="eyebrow">Enterprise reseller automation</span>
           <h1>Multi-tenant SaaS for APIs, wallets, and field operations.</h1>
           <p>
-            Inspired by MRobotics-style B2B automation, Sohanur Cloud gives
+            Inspired by MRobotics-style B2B automation, RoboticAPI Cloud gives
             telecom, travel, and utility resellers a secure portal, scoped APIs,
             tenant dashboards, and auditable workflows from day one.
           </p>
@@ -183,7 +183,7 @@ export default function HomePage() {
             <Link className="button" href="/pricing">
               Compare plans
             </Link>
-            <a className="button secondary" href="mailto:support@sohanur.cloud">
+            <a className="button secondary" href="mailto:support@roboticapi.in">
               <Headphones size={18} />
               Contact support
             </a>
@@ -201,7 +201,7 @@ function Footer() {
       <div className="container footer-grid">
         <div className="brand">
           <span className="brand-mark">SC</span>
-          <span>Sohanur Cloud</span>
+          <span>RoboticAPI Cloud</span>
         </div>
         <span>Secure multi-tenant SaaS for reseller automation.</span>
       </div>

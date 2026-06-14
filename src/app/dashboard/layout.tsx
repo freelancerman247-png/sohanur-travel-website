@@ -25,7 +25,7 @@ export default function DashboardLayout({
       <aside className="sidebar">
         <Link className="brand" href="/">
           <span className="brand-mark">SC</span>
-          <span>Sohanur Cloud</span>
+          <span>RoboticAPI Cloud</span>
         </Link>
         <div className="metric" style={{ marginTop: 24 }}>
           <ShieldCheck color="var(--primary)" />

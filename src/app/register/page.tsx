@@ -1,44 +1,34 @@
 import type { Metadata } from "next";
 import Link from "next/link";
+import { TenantRegistrationForm } from "@/components/forms/tenant-registration-form";
+import { Card, CardContent, CardDescription, CardHeader, CardTitle } from "@/components/ui/card";
 
 export const metadata: Metadata = {
   title: "Register",
-  description: "Create a Sohanur Cloud tenant workspace."
+  description: "Create a RoboticAPI Cloud tenant workspace."
 };
 
 export default function RegisterPage() {
   return (
     <main className="auth-shell container">
-      <section className="card auth-card">
+      <Card className="w-full max-w-[520px]">
+        <CardHeader>
         <span className="eyebrow">Create tenant</span>
-        <h1 style={{ fontSize: "2.7rem", letterSpacing: "-0.06em", lineHeight: 1, margin: "18px 0 10px" }}>
+          <CardTitle className="text-4xl leading-none tracking-[-0.06em]">
           Launch a secure reseller workspace.
-        </h1>
-        <p style={{ color: "var(--muted)", lineHeight: 1.65 }}>
+          </CardTitle>
+          <CardDescription className="text-base">
           Capture the tenant, owner, and billing contact in one flow. The backend
           schema is ready to create owner memberships and trial subscriptions.
-        </p>
-        <form className="form">
-          <label className="field">
-            Company name
-            <input autoComplete="organization" name="company" placeholder="Sohanur Telecom Services" />
-          </label>
-          <label className="field">
-            Workspace slug
-            <input name="slug" placeholder="sohanur" />
-          </label>
-          <label className="field">
-            Owner email
-            <input autoComplete="email" name="email" placeholder="owner@example.com" type="email" />
-          </label>
-          <button className="button" type="button">
-            Create trial workspace
-          </button>
-        </form>
+          </CardDescription>
+        </CardHeader>
+        <CardContent>
+          <TenantRegistrationForm />
         <p style={{ color: "var(--muted)", marginTop: 20 }}>
           Already have a tenant? <Link href="/login">Sign in</Link>
         </p>
-      </section>
+        </CardContent>
+      </Card>
     </main>
   );
 }
