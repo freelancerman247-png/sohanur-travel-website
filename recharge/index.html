@@ -1,0 +1,114 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Multi Recharge Software | Robotic API</title>
+    <meta name="description" content="Demo multi recharge software panel for mobile, DTH, wallet, and distributor fintech operations.">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <header class="site-header">
+      <div class="container nav-wrap">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark">R</span>
+          <span>Robotic API</span>
+        </a>
+        <button class="menu-toggle" type="button" data-menu-toggle>Menu</button>
+        <nav class="nav" data-nav>
+          <a href="../index.html#services">Services</a>
+          <a href="../whitelabel/">White-label</a>
+          <a href="../admin/">Admin</a>
+          <a class="btn secondary" href="../index.html#contact">Get Quote</a>
+        </nav>
+      </div>
+    </header>
+
+    <main>
+      <section class="page-hero">
+        <div class="container">
+          <p class="breadcrumbs"><a href="../index.html">Home</a> / Multi Recharge Software</p>
+          <h1>Recharge operations panel.</h1>
+          <p class="section-lead">
+            Demonstrate prepaid recharge workflows with commission calculation, wallet debit,
+            transaction references, and lead capture for your sales team.
+          </p>
+        </div>
+      </section>
+
+      <section class="section">
+        <div class="container software-layout">
+          <form class="form-card" data-recharge-form>
+            <label>
+              Operator
+              <select name="operator" required>
+                <option value="">Select operator</option>
+                <option>Airtel</option>
+                <option>Jio</option>
+                <option>Vi</option>
+                <option>BSNL</option>
+                <option>Tata Play DTH</option>
+                <option>Dish TV</option>
+              </select>
+            </label>
+            <label>
+              Circle
+              <select name="circle">
+                <option value="">Select circle</option>
+                <option>Delhi NCR</option>
+                <option>West Bengal</option>
+                <option>Bihar Jharkhand</option>
+                <option>Maharashtra Goa</option>
+                <option>All India DTH</option>
+              </select>
+            </label>
+            <label>
+              Customer mobile
+              <input name="mobile" inputmode="numeric" maxlength="10" placeholder="10 digit number" required>
+            </label>
+            <label>
+              Amount
+              <input name="amount" type="number" min="10" max="5000" step="1" placeholder="299" required>
+            </label>
+            <label>
+              Agent name
+              <input name="agentName" required>
+            </label>
+            <label>
+              Agent phone
+              <input name="agentPhone" required>
+            </label>
+            <button class="btn" type="submit">Generate Demo Recharge</button>
+            <p data-form-status></p>
+          </form>
+
+          <div class="grid">
+            <article class="panel-card">
+              <h2>Designed for distributor networks.</h2>
+              <p class="section-lead">
+                Connect this UI to live recharge provider APIs, wallet ledgers, callback URLs,
+                and dispute management when moving from demo to production.
+              </p>
+              <ul>
+                <li>Operator-wise API routing and fallback</li>
+                <li>Retailer wallet debit and commission split</li>
+                <li>Status callback, refund queue, and dispute logs</li>
+                <li>Admin, master distributor, distributor, and retailer hierarchy</li>
+              </ul>
+            </article>
+            <article class="panel-card" data-recharge-receipt hidden></article>
+          </div>
+        </div>
+      </section>
+    </main>
+
+    <footer class="site-footer">
+      <div class="container footer-grid">
+        <span>Robotic API multi recharge software demo.</span>
+        <a href="../index.html#contact">Request production integration</a>
+      </div>
+    </footer>
+
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>

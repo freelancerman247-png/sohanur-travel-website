@@ -1,0 +1,79 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Admin Software | Robotic API</title>
+    <meta name="description" content="Protected Robotic API admin dashboard for fintech software leads.">
+    <link rel="stylesheet" href="../assets/css/styles.css">
+  </head>
+  <body>
+    <main class="dashboard-shell" data-admin-root>
+      <div class="container">
+        <a class="brand" href="../index.html">
+          <span class="brand-mark">R</span>
+          <span>Robotic API Admin</span>
+        </a>
+
+        <section class="page-hero">
+          <p class="breadcrumbs"><a href="../index.html">Home</a> / Admin Software</p>
+          <h1>Lead command center.</h1>
+          <p class="section-lead">
+            Use this protected dashboard to read website inquiries, white-label quote requests,
+            and recharge demo submissions stored by the PHP backend.
+          </p>
+        </section>
+
+        <section class="panel-card">
+          <div class="admin-toolbar">
+            <label>
+              Admin token
+              <input data-admin-token type="password" placeholder="Token from api/config.php">
+            </label>
+            <button class="btn" type="button" data-load-leads>Load Leads</button>
+          </div>
+          <p class="notice" data-admin-summary>
+            Change the default token in api/config.php after uploading, then enter it here.
+          </p>
+          <div class="table-wrap">
+            <table>
+              <thead>
+                <tr>
+                  <th>Lead</th>
+                  <th>Contact</th>
+                  <th>Service</th>
+                  <th>Message</th>
+                  <th>Created</th>
+                </tr>
+              </thead>
+              <tbody data-leads-table>
+                <tr>
+                  <td colspan="5">No leads loaded yet.</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+        </section>
+
+        <section class="section">
+          <div class="grid three">
+            <article class="feature-card">
+              <h3>User control</h3>
+              <p>Extend this dashboard with staff login, distributor roles, KYC status, and ticket queues.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Wallet audit</h3>
+              <p>Add credit, debit, refund, and settlement records when connecting a production database.</p>
+            </article>
+            <article class="feature-card">
+              <h3>Reports</h3>
+              <p>The lead table is intentionally export-friendly and can be upgraded to CSV or MySQL reports.</p>
+            </article>
+          </div>
+        </section>
+      </div>
+    </main>
+
+    <script src="../assets/js/app.js"></script>
+  </body>
+</html>
