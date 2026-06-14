@@ -13,7 +13,7 @@ const navigation = [
   { href: "/dashboard/api-keys", label: "API keys", icon: KeyRound },
   { href: "/dashboard/usage", label: "Usage", icon: BarChart3 },
   { href: "/dashboard/settings", label: "Settings", icon: Settings }
-];
+] as const;
 
 export default function DashboardLayout({
   children
