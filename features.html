@@ -1,0 +1,110 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Features planned for Robotic API Lapu SIM Recharge Automation software.">
+  <title>Features | Robotic API</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">RA</span>
+        <span><strong>Robotic API</strong><small>Lapu Recharge Automation</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+        <span class="sr-only">Toggle menu</span><span></span><span></span><span></span>
+      </button>
+      <ul id="primary-menu" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a class="active" href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="guide.html">Setup Guide</a></li>
+        <li><a class="btn btn-small" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Product design</p>
+        <h1>Feature blueprint for your recharge automation platform</h1>
+        <p>
+          These modules are planned so the website can later grow into a complete
+          admin, retailer, and gateway-based recharge system.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container cards two-columns">
+        <article class="feature-card">
+          <h2>Admin Dashboard</h2>
+          <p>Manage retailers, wallet balance, operator settings, plans, support tickets, and transaction monitoring.</p>
+          <ul class="check-list">
+            <li>User approval and KYC status</li>
+            <li>Operator-wise commission setup</li>
+            <li>Pending, failed, and success transaction filters</li>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <h2>Retailer Panel</h2>
+          <p>Retailers can submit recharge requests, check wallet balance, view reports, and download receipts.</p>
+          <ul class="check-list">
+            <li>Fast recharge form</li>
+            <li>Wallet debit and refund ledger</li>
+            <li>Daily business reports</li>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <h2>Recharge Queue</h2>
+          <p>Recharge requests move through a queue so every order has a visible state from request to final response.</p>
+          <ul class="check-list">
+            <li>Queued, processing, success, failed, refunded</li>
+            <li>Duplicate request detection</li>
+            <li>Manual retry option for admin</li>
+          </ul>
+        </article>
+        <article class="feature-card">
+          <h2>Gateway Integration</h2>
+          <p>The future gateway layer can connect with APIs, SIM modem software, or a C++ local service depending on your setup.</p>
+          <ul class="check-list">
+            <li>Operator routing rules</li>
+            <li>Response parser for status updates</li>
+            <li>Secure server-to-gateway authentication</li>
+          </ul>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container">
+        <div class="section-heading">
+          <p class="eyebrow">Suggested build order</p>
+          <h2>Step-by-step development phases</h2>
+        </div>
+        <ol class="timeline">
+          <li><strong>Website:</strong> Publish the marketing pages on roboticapi.in.</li>
+          <li><strong>Database design:</strong> Users, wallets, recharge orders, operators, and reports.</li>
+          <li><strong>Admin panel:</strong> Secure login, retailer management, and transaction controls.</li>
+          <li><strong>Retailer panel:</strong> Recharge form, wallet, ledger, and receipt pages.</li>
+          <li><strong>Gateway:</strong> API/SIM modem automation layer with logs and status callbacks.</li>
+          <li><strong>Security:</strong> Role permissions, rate limits, audit logs, and backups.</li>
+        </ol>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>Robotic API</strong><p>Lapu SIM Recharge Automation software development starter.</p></div>
+      <div><a href="index.html">Home</a><a href="pricing.html">Pricing</a><a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>

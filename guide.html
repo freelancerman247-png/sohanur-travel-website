@@ -1,0 +1,123 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Step-by-step Hostinger hPanel upload guide for roboticapi.in website files.">
+  <title>Setup Guide | Robotic API</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">RA</span>
+        <span><strong>Robotic API</strong><small>Lapu Recharge Automation</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+        <span class="sr-only">Toggle menu</span><span></span><span></span><span></span>
+      </button>
+      <ul id="primary-menu" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a class="active" href="guide.html">Setup Guide</a></li>
+        <li><a class="btn btn-small" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Hostinger hPanel</p>
+        <h1>How to upload this website under roboticapi.in</h1>
+        <p>
+          Follow these steps after downloading the website files from your computer or
+          repository. Upload only the website files into public_html.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container guide-layout">
+        <article class="guide-step">
+          <span>1</span>
+          <div>
+            <h2>Prepare your files</h2>
+            <p>Keep these files and folders together:</p>
+            <pre><code>index.html
+features.html
+pricing.html
+guide.html
+contact.html
+assets/
+  css/styles.css
+  js/main.js</code></pre>
+          </div>
+        </article>
+        <article class="guide-step">
+          <span>2</span>
+          <div>
+            <h2>Open Hostinger File Manager</h2>
+            <p>Login to Hostinger hPanel, choose your hosting plan, open <strong>Websites</strong>, select <strong>roboticapi.in</strong>, then open <strong>File Manager</strong>.</p>
+          </div>
+        </article>
+        <article class="guide-step">
+          <span>3</span>
+          <div>
+            <h2>Go to public_html</h2>
+            <p>Open the <strong>public_html</strong> folder. This is the live website root for your domain.</p>
+          </div>
+        </article>
+        <article class="guide-step">
+          <span>4</span>
+          <div>
+            <h2>Upload the files</h2>
+            <p>Click <strong>Upload</strong> and upload the HTML files plus the full <strong>assets</strong> folder. If you upload a ZIP, extract it inside public_html.</p>
+          </div>
+        </article>
+        <article class="guide-step">
+          <span>5</span>
+          <div>
+            <h2>Check the homepage</h2>
+            <p>Open <strong>https://roboticapi.in</strong>. If the old page is still visible, clear browser cache or check that index.html is directly inside public_html.</p>
+          </div>
+        </article>
+        <article class="guide-step">
+          <span>6</span>
+          <div>
+            <h2>Connect the contact form later</h2>
+            <p>This first version validates the contact form in the browser. To receive messages by email or database, add PHP/Node backend handling in the next development step.</p>
+          </div>
+        </article>
+      </div>
+    </section>
+
+    <section class="section section-light">
+      <div class="container split">
+        <div>
+          <p class="eyebrow">Next development prompt</p>
+          <h2>Recommended prompt for step 2</h2>
+          <p>
+            Ask for: "Design the database and admin dashboard pages for Lapu SIM Recharge Automation with users, wallets, operators, recharge orders, and reports."
+          </p>
+        </div>
+        <div class="notice-box">
+          <strong>Do not upload backend/cpp to public_html</strong>
+          <p>The C++ folder is only a future gateway example. It is not needed for the website upload.</p>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>Robotic API</strong><p>Lapu SIM Recharge Automation software development starter.</p></div>
+      <div><a href="index.html">Home</a><a href="features.html">Features</a><a href="contact.html">Contact</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
