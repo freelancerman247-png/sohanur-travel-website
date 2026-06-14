@@ -1,0 +1,103 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description" content="Contact Robotic API for Lapu SIM Recharge Automation software development.">
+  <title>Contact | Robotic API</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <header class="site-header">
+    <nav class="navbar container" aria-label="Main navigation">
+      <a class="brand" href="index.html">
+        <span class="brand-mark">RA</span>
+        <span><strong>Robotic API</strong><small>Lapu Recharge Automation</small></span>
+      </a>
+      <button class="nav-toggle" type="button" aria-expanded="false" aria-controls="primary-menu">
+        <span class="sr-only">Toggle menu</span><span></span><span></span><span></span>
+      </button>
+      <ul id="primary-menu" class="nav-links">
+        <li><a href="index.html">Home</a></li>
+        <li><a href="features.html">Features</a></li>
+        <li><a href="pricing.html">Pricing</a></li>
+        <li><a href="guide.html">Setup Guide</a></li>
+        <li><a class="btn btn-small active" href="contact.html">Contact</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <main>
+    <section class="page-hero">
+      <div class="container narrow">
+        <p class="eyebrow">Project inquiry</p>
+        <h1>Tell us what you want to build next</h1>
+        <p>
+          Use this contact page as the first customer inquiry screen. Backend email or
+          database saving can be added in the next step.
+        </p>
+      </div>
+    </section>
+
+    <section class="section">
+      <div class="container contact-grid">
+        <form class="contact-form" id="contactForm" novalidate>
+          <div class="form-row">
+            <label for="name">Full name</label>
+            <input id="name" name="name" type="text" placeholder="Your name" required>
+          </div>
+          <div class="form-row">
+            <label for="phone">Mobile number</label>
+            <input id="phone" name="phone" type="tel" placeholder="9876543210" required>
+          </div>
+          <div class="form-row">
+            <label for="email">Email address</label>
+            <input id="email" name="email" type="email" placeholder="you@example.com">
+          </div>
+          <div class="form-row">
+            <label for="service">Required service</label>
+            <select id="service" name="service" required>
+              <option value="">Select one option</option>
+              <option>Website design</option>
+              <option>Admin dashboard</option>
+              <option>Retailer panel</option>
+              <option>Recharge gateway automation</option>
+              <option>Full software development</option>
+            </select>
+          </div>
+          <div class="form-row">
+            <label for="message">Project details</label>
+            <textarea id="message" name="message" rows="5" placeholder="Write your requirements..." required></textarea>
+          </div>
+          <button class="btn" type="submit">Send Inquiry</button>
+          <p class="form-message" id="formMessage" role="status"></p>
+        </form>
+
+        <aside class="contact-panel">
+          <p class="eyebrow">Contact details</p>
+          <h2>Robotic API</h2>
+          <p>Domain: <a href="https://roboticapi.in">roboticapi.in</a></p>
+          <p>Email: <a href="mailto:support@roboticapi.in">support@roboticapi.in</a></p>
+          <p>WhatsApp: Add your business number here</p>
+          <hr>
+          <h3>Before automation development</h3>
+          <ul class="check-list">
+            <li>Confirm operator and SIM/API provider rules</li>
+            <li>Define retailer wallet and commission logic</li>
+            <li>Plan secure hosting for dashboard and gateway</li>
+          </ul>
+        </aside>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer-grid">
+      <div><strong>Robotic API</strong><p>Lapu SIM Recharge Automation software development starter.</p></div>
+      <div><a href="index.html">Home</a><a href="features.html">Features</a><a href="pricing.html">Pricing</a></div>
+    </div>
+  </footer>
+
+  <script src="assets/js/main.js"></script>
+</body>
+</html>
