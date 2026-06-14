@@ -9,6 +9,7 @@ const ADMIN_USERNAME = 'admin';
 // Default password is Admin@12345. Change this hash after first upload.
 const ADMIN_PASSWORD_HASH = '6f2cb9dd8f4b65e24e1c3f3fa5bc57982349237f11abceacd45bbcb74d621c25';
 const QUERY_DATA_FILE = __DIR__ . '/../data/queries.json';
+const BLOG_DATA_FILE = __DIR__ . '/../data/blog-posts.json';
 
 function e(string $value): string
 {
@@ -99,4 +100,130 @@ function create_query(array $input): array
         'created_at' => $now,
         'updated_at' => $now,
     ];
+}
+
+function ensure_blog_store(): void
+{
+    $directory = dirname(BLOG_DATA_FILE);
+
+    if (!is_dir($directory)) {
+        mkdir($directory, 0755, true);
+    }
+
+    if (!file_exists(BLOG_DATA_FILE)) {
+        file_put_contents(BLOG_DATA_FILE, json_encode(default_blog_posts(), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES));
+    }
+}
+
+function default_blog_posts(): array
+{
+    $now = date('Y-m-d H:i:s');
+
+    return [
+        [
+            'id' => 'blog_' . bin2hex(random_bytes(4)),
+            'slug' => 'how-to-plan-a-smooth-umrah-journey',
+            'title' => 'How to Plan a Smooth Umrah Journey',
+            'category' => 'Umrah',
+            'excerpt' => 'Simple preparation tips for Umrah travelers, including documents, hotel planning, and travel support.',
+            'content' => "Planning Umrah becomes easier when you prepare your documents, travel dates, hotel preference, and budget before requesting a package.\n\nSohanur Travel can help with visa guidance, Makkah and Madinah hotel support, flight assistance, transport planning, and family package options.",
+            'image' => 'images/makkah.jpg',
+            'status' => 'Published',
+            'author' => 'Sohanur Travel Team',
+            'published_at' => $now,
+            'created_at' => $now,
+            'updated_at' => $now,
+        ],
+        [
+            'id' => 'blog_' . bin2hex(random_bytes(4)),
+            'slug' => 'flight-booking-tips-for-better-prices',
+            'title' => 'Flight Booking Tips for Better Prices',
+            'category' => 'Flights',
+            'excerpt' => 'Learn how flexible dates, early planning, and route comparison can help you find better flight prices.',
+            'content' => "Flight prices can change quickly. Travelers often save more by planning early, staying flexible with dates, and comparing multiple routes.\n\nFor urgent trips, share your route, date, passenger count, and preferred timing with our team so we can check suitable options.",
+            'image' => 'images/banner2.jpg',
+            'status' => 'Published',
+            'author' => 'Sohanur Travel Team',
+            'published_at' => $now,
+            'created_at' => $now,
+            'updated_at' => $now,
+        ],
+    ];
+}
+
+function read_blog_posts(): array
+{
+    ensure_blog_store();
+
+    $json = file_get_contents(BLOG_DATA_FILE);
+    $posts = json_decode($json ?: '[]', true);
+
+    return is_array($posts) ? $posts : [];
+}
+
+function save_blog_posts(array $posts): void
+{
+    ensure_blog_store();
+
+    file_put_contents(
+        BLOG_DATA_FILE,
+        json_encode(array_values($posts), JSON_PRETTY_PRINT | JSON_UNESCAPED_SLASHES),
+        LOCK_EX
+    );
+}
+
+function slugify(string $value): string
+{
+    $slug = strtolower(trim($value));
+    $slug = preg_replace('/[^a-z0-9]+/', '-', $slug) ?: '';
+    $slug = trim($slug, '-');
+
+    return $slug !== '' ? $slug : 'blog-post';
+}
+
+function unique_blog_slug(string $title, array $posts, ?string $currentId = null): string
+{
+    $base = slugify($title);
+    $slug = $base;
+    $counter = 2;
+
+    while (true) {
+        $exists = false;
+
+        foreach ($posts as $post) {
+            if (($post['id'] ?? '') !== $currentId && ($post['slug'] ?? '') === $slug) {
+                $exists = true;
+                break;
+            }
+        }
+
+        if (!$exists) {
+            return $slug;
+        }
+
+        $slug = $base . '-' . $counter;
+        $counter++;
+    }
+}
+
+function find_blog_index(array $posts, string $id): ?int
+{
+    foreach ($posts as $index => $post) {
+        if (($post['id'] ?? '') === $id) {
+            return $index;
+        }
+    }
+
+    return null;
+}
+
+function find_blog_by_slug(array $posts, string $slug): ?array
+{
+    foreach ($posts as $post) {
+        if (($post['slug'] ?? '') === $slug && ($post['status'] ?? '') === 'Published') {
+            return $post;
+        }
+    }
+
+    return null;
 }

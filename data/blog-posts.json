@@ -1,0 +1,30 @@
+[
+    {
+        "id": "blog_demo_umrah",
+        "slug": "how-to-plan-a-smooth-umrah-journey",
+        "title": "How to Plan a Smooth Umrah Journey",
+        "category": "Umrah",
+        "excerpt": "Simple preparation tips for Umrah travelers, including documents, hotel planning, and travel support.",
+        "content": "Planning Umrah becomes easier when you prepare your documents, travel dates, hotel preference, and budget before requesting a package.\n\nSohanur Travel can help with visa guidance, Makkah and Madinah hotel support, flight assistance, transport planning, and family package options.",
+        "image": "images/makkah.jpg",
+        "status": "Published",
+        "author": "Sohanur Travel Team",
+        "published_at": "2026-06-14 00:00:00",
+        "created_at": "2026-06-14 00:00:00",
+        "updated_at": "2026-06-14 00:00:00"
+    },
+    {
+        "id": "blog_demo_flights",
+        "slug": "flight-booking-tips-for-better-prices",
+        "title": "Flight Booking Tips for Better Prices",
+        "category": "Flights",
+        "excerpt": "Learn how flexible dates, early planning, and route comparison can help you find better flight prices.",
+        "content": "Flight prices can change quickly. Travelers often save more by planning early, staying flexible with dates, and comparing multiple routes.\n\nFor urgent trips, share your route, date, passenger count, and preferred timing with our team so we can check suitable options.",
+        "image": "images/banner2.jpg",
+        "status": "Published",
+        "author": "Sohanur Travel Team",
+        "published_at": "2026-06-14 00:00:00",
+        "created_at": "2026-06-14 00:00:00",
+        "updated_at": "2026-06-14 00:00:00"
+    }
+]

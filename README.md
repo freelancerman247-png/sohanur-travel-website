@@ -10,6 +10,7 @@ A responsive static travel agency website for Sohanur Travel. It includes a poli
 - Package buttons that prefill the booking flow
 - Client-side booking form confirmation
 - PHP admin dashboard for customer service queries
+- PHP blog system with admin-managed posts
 - No build step or external JavaScript dependencies
 
 ## Run locally
@@ -31,6 +32,8 @@ Then visit `http://localhost:8000`.
 - `submit-query.php` - saves customer queries from website forms
 - `thank-you.php` - customer confirmation page after query submission
 - `admin/` - admin login and query dashboard
+- `blog.php` - public blog listing page
+- `blog-post.php` - public blog detail page
 - `data/` - protected JSON query storage
 - `query-form-example.html` - copy/paste form snippet for service pages
 
@@ -44,6 +47,8 @@ data/
 submit-query.php
 thank-you.php
 query-form-example.html
+blog.php
+blog-post.php
 ```
 
 Then open:
@@ -68,3 +73,32 @@ To collect queries from any service page, add a form that posts to:
 ```
 
 You can copy the complete example from `query-form-example.html`.
+
+## Blog setup
+
+Upload:
+
+```text
+blog.php
+blog-post.php
+admin/blog.php
+data/blog-posts.json
+```
+
+Manage posts here:
+
+```text
+https://your-domain.com/admin/blog.php
+```
+
+Public blog page:
+
+```text
+https://your-domain.com/blog.php
+```
+
+To add a header menu link, add:
+
+```html
+<li><a href="blog.php">Blog</a></li>
+```

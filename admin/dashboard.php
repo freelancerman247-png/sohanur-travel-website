@@ -79,6 +79,7 @@ function whatsapp_link(array $query): string
             <h1>Customer Queries</h1>
         </div>
         <div class="header-actions">
+            <a href="blog.php">Manage Blog</a>
             <a href="../index.html" target="_blank" rel="noopener">View Website</a>
             <a class="logout" href="logout.php">Logout</a>
         </div>
