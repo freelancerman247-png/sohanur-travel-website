@@ -1,0 +1,44 @@
+<!--
+  Copy this form into any service page where customers should submit a query.
+  It saves the query to the admin dashboard through submit-query.php.
+-->
+<form action="submit-query.php" method="post" class="website-query-form">
+  <input type="hidden" name="source" value="Website Service Page">
+
+  <label>
+    Full Name *
+    <input type="text" name="name" required placeholder="Your name">
+  </label>
+
+  <label>
+    Phone Number *
+    <input type="tel" name="phone" required placeholder="Your phone number">
+  </label>
+
+  <label>
+    Email Address
+    <input type="email" name="email" placeholder="Your email address">
+  </label>
+
+  <label>
+    Service Required *
+    <select name="service" required>
+      <option value="">Select service</option>
+      <option>Flight Ticketing</option>
+      <option>Train Booking</option>
+      <option>Hotel Booking</option>
+      <option>Visa Services</option>
+      <option>Umrah Services</option>
+      <option>Passport & Immigration</option>
+      <option>Mobile Recharge</option>
+      <option>Other</option>
+    </select>
+  </label>
+
+  <label>
+    Message *
+    <textarea name="message" rows="5" required placeholder="Write your requirement"></textarea>
+  </label>
+
+  <button type="submit">Submit Query</button>
+</form>
