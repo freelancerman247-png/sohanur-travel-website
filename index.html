@@ -289,8 +289,10 @@
           <input type="text" name="name" autocomplete="name" required placeholder="Your name">
         </label>
         <label>
-          Phone or email
-          <input type="text" name="contact" autocomplete="email" required placeholder="How can we reach you?">
+          Mobile number
+          <input type="tel" name="mobile" required placeholder="9876543210 / 0501234567 / +96612345678" pattern="(?:[6-9][0-9]{9}|05[0-9]{8}|(?:\+966|966)[0-9]{8})" data-mobile-input data-mobile-error="booking-mobile-error" aria-describedby="booking-mobile-helper booking-mobile-error">
+          <small class="mobile-helper" id="booking-mobile-helper">Accepted: 9876543210, 0501234567, 96612345678, +96612345678</small>
+          <small class="mobile-error" id="booking-mobile-error" aria-live="polite"></small>
         </label>
         <label>
           Destination

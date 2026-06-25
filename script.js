@@ -7,6 +7,10 @@ const destinationSelect = document.querySelector("[data-destination-select]");
 const formStatus = document.querySelector("[data-form-status]");
 const contactStatus = document.querySelector("[data-contact-status]");
 const packageButtons = document.querySelectorAll("[data-package]");
+const mobileInputs = document.querySelectorAll("[data-mobile-input]");
+const mobilePattern = /^(?:[6-9]\d{9}|05\d{8}|(?:\+966|966)\d{8})$/;
+const mobileHelpText =
+  "Enter a valid Indian (9876543210) or Saudi number (0501234567, 96612345678, +96612345678).";
 
 const closeMenu = () => {
   document.body.classList.remove("menu-open");
@@ -17,6 +21,65 @@ const closeMenu = () => {
 
 const updateHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 8);
+};
+
+const validateMobileNumber = (value) => {
+  const normalizedValue = value.replace(/[\s()-]/g, "");
+  return mobilePattern.test(normalizedValue);
+};
+
+const updateMobileError = (input, showError) => {
+  const errorId = input.getAttribute("data-mobile-error");
+  const errorElement = errorId ? document.getElementById(errorId) : null;
+
+  if (!errorElement) {
+    return;
+  }
+
+  errorElement.textContent = showError ? mobileHelpText : "";
+};
+
+const setMobileValidationState = (input, showError = false) => {
+  const value = input.value.trim();
+
+  if (!value) {
+    input.setCustomValidity("");
+    input.classList.remove("is-valid", "is-invalid");
+    updateMobileError(input, false);
+    return;
+  }
+
+  const isValid = validateMobileNumber(value);
+
+  input.setCustomValidity(isValid ? "" : mobileHelpText);
+  input.classList.toggle("is-valid", isValid);
+  input.classList.toggle("is-invalid", !isValid);
+  updateMobileError(input, showError && !isValid);
+};
+
+const bindMobileValidation = () => {
+  mobileInputs.forEach((input) => {
+    if (!(input instanceof HTMLInputElement)) {
+      return;
+    }
+
+    input.addEventListener("input", () => setMobileValidationState(input, true));
+    input.addEventListener("blur", () => setMobileValidationState(input, true));
+  });
+};
+
+const clearMobileValidationState = (form) => {
+  const formMobileInputs = form.querySelectorAll("[data-mobile-input]");
+
+  formMobileInputs.forEach((input) => {
+    if (!(input instanceof HTMLInputElement)) {
+      return;
+    }
+
+    input.setCustomValidity("");
+    input.classList.remove("is-valid", "is-invalid");
+    updateMobileError(input, false);
+  });
 };
 
 navToggle?.addEventListener("click", () => {
@@ -71,6 +134,7 @@ bookingForm?.addEventListener("submit", (event) => {
   }
 
   bookingForm.reset();
+  clearMobileValidationState(bookingForm);
 });
 
 contactForm?.addEventListener("submit", (event) => {
@@ -90,6 +154,7 @@ contactForm?.addEventListener("submit", (event) => {
   }
 
   contactForm.reset();
+  clearMobileValidationState(contactForm);
 });
 
 window.addEventListener("scroll", updateHeader, { passive: true });
@@ -100,3 +165,4 @@ window.addEventListener("resize", () => {
 });
 
 updateHeader();
+bindMobileValidation();
