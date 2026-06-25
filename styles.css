@@ -717,6 +717,37 @@ textarea {
   box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
 }
 
+.booking-form .field-hint,
+.contact-message-card .field-hint {
+  display: block;
+  margin-top: 8px;
+  color: var(--muted);
+  font-size: 0.85rem;
+  font-weight: 600;
+}
+
+.booking-form .field-error,
+.contact-message-card .field-error {
+  display: block;
+  min-height: 1.25rem;
+  margin-top: 6px;
+  color: #b42318;
+  font-size: 0.85rem;
+  font-weight: 700;
+}
+
+.booking-form input.is-invalid,
+.contact-message-card input.is-invalid {
+  border-color: #dc2626;
+  box-shadow: 0 0 0 4px rgba(220, 38, 38, 0.12);
+}
+
+.booking-form input.is-valid,
+.contact-message-card input.is-valid {
+  border-color: var(--accent);
+  box-shadow: 0 0 0 4px rgba(15, 118, 110, 0.12);
+}
+
 .form-row {
   display: grid;
   grid-template-columns: 1fr 1fr;

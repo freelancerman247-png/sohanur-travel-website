@@ -7,6 +7,11 @@ const destinationSelect = document.querySelector("[data-destination-select]");
 const formStatus = document.querySelector("[data-form-status]");
 const contactStatus = document.querySelector("[data-contact-status]");
 const packageButtons = document.querySelectorAll("[data-package]");
+const mobileInputs = document.querySelectorAll("[data-mobile-input]");
+const indianMobilePattern = /^[6-9]\d{9}$/;
+const saudiMobilePattern = /^(?:05\d{8}|9665\d{8}|\+9665\d{8})$/;
+const mobileValidationMessage =
+  "Enter a valid Indian mobile number (10 digits starting with 6, 7, 8, or 9) or a Saudi mobile number in 05XXXXXXXX, 9665XXXXXXXX, or +9665XXXXXXXX format.";
 
 const closeMenu = () => {
   document.body.classList.remove("menu-open");
@@ -18,6 +23,68 @@ const closeMenu = () => {
 const updateHeader = () => {
   header?.classList.toggle("is-scrolled", window.scrollY > 8);
 };
+
+const normalizeMobileNumber = (value) => value.trim().replace(/[\s-]/g, "");
+
+const getMobileErrorElement = (input) => {
+  const errorId = input.getAttribute("data-mobile-error");
+  return errorId ? document.getElementById(errorId) : null;
+};
+
+const setMobileFieldState = (input, message) => {
+  input.setCustomValidity(message);
+  input.classList.toggle("is-invalid", Boolean(message));
+  input.classList.toggle("is-valid", !message && input.value.trim() !== "");
+  input.setAttribute("aria-invalid", message ? "true" : "false");
+
+  const errorElement = getMobileErrorElement(input);
+
+  if (errorElement) {
+    errorElement.textContent = message;
+  }
+};
+
+const validateMobileNumber = (input, { showRequired = false } = {}) => {
+  const normalizedValue = normalizeMobileNumber(input.value);
+
+  if (!normalizedValue) {
+    setMobileFieldState(input, showRequired ? "Please enter your mobile number." : "");
+    return !showRequired;
+  }
+
+  const isValidNumber =
+    indianMobilePattern.test(normalizedValue) || saudiMobilePattern.test(normalizedValue);
+
+  setMobileFieldState(input, isValidNumber ? "" : mobileValidationMessage);
+  return isValidNumber;
+};
+
+const validateFormMobileNumbers = (form) =>
+  Array.from(form.querySelectorAll("[data-mobile-input]")).every(
+    (input) => input instanceof HTMLInputElement && validateMobileNumber(input, { showRequired: true })
+  );
+
+const resetFormMobileValidation = (form) => {
+  form.querySelectorAll("[data-mobile-input]").forEach((input) => {
+    if (input instanceof HTMLInputElement) {
+      setMobileFieldState(input, "");
+    }
+  });
+};
+
+mobileInputs.forEach((input) => {
+  if (!(input instanceof HTMLInputElement)) {
+    return;
+  }
+
+  input.addEventListener("input", () => {
+    validateMobileNumber(input);
+  });
+
+  input.addEventListener("blur", () => {
+    validateMobileNumber(input, { showRequired: true });
+  });
+});
 
 navToggle?.addEventListener("click", () => {
   const isOpen = navMenu?.classList.toggle("is-open");
@@ -57,7 +124,11 @@ packageButtons.forEach((button) => {
 bookingForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (!(bookingForm instanceof HTMLFormElement) || !bookingForm.checkValidity()) {
+  if (
+    !(bookingForm instanceof HTMLFormElement) ||
+    !validateFormMobileNumbers(bookingForm) ||
+    !bookingForm.checkValidity()
+  ) {
     bookingForm?.reportValidity();
     return;
   }
@@ -71,12 +142,17 @@ bookingForm?.addEventListener("submit", (event) => {
   }
 
   bookingForm.reset();
+  resetFormMobileValidation(bookingForm);
 });
 
 contactForm?.addEventListener("submit", (event) => {
   event.preventDefault();
 
-  if (!(contactForm instanceof HTMLFormElement) || !contactForm.checkValidity()) {
+  if (
+    !(contactForm instanceof HTMLFormElement) ||
+    !validateFormMobileNumbers(contactForm) ||
+    !contactForm.checkValidity()
+  ) {
     contactForm?.reportValidity();
     return;
   }
@@ -90,6 +166,7 @@ contactForm?.addEventListener("submit", (event) => {
   }
 
   contactForm.reset();
+  resetFormMobileValidation(contactForm);
 });
 
 window.addEventListener("scroll", updateHeader, { passive: true });

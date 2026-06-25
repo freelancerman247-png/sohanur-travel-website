@@ -289,8 +289,22 @@
           <input type="text" name="name" autocomplete="name" required placeholder="Your name">
         </label>
         <label>
-          Phone or email
-          <input type="text" name="contact" autocomplete="email" required placeholder="How can we reach you?">
+          Mobile number
+          <input
+            type="tel"
+            name="mobile"
+            autocomplete="tel"
+            inputmode="tel"
+            required
+            pattern="(?:[6-9][0-9]{9}|05[0-9]{8}|9665[0-9]{8}|\+9665[0-9]{8})"
+            placeholder="9876543210 or +9665XXXXXXXX"
+            title="Enter a valid Indian mobile number (10 digits starting with 6, 7, 8, or 9) or a Saudi mobile number in 05XXXXXXXX, 9665XXXXXXXX, or +9665XXXXXXXX format."
+            aria-describedby="booking-mobile-help booking-mobile-error"
+            data-mobile-input
+            data-mobile-error="booking-mobile-error"
+          >
+          <span class="field-hint" id="booking-mobile-help">Use a 10-digit Indian mobile number or Saudi mobile number in 05XXXXXXXX, 9665XXXXXXXX, or +9665XXXXXXXX format.</span>
+          <span class="field-error" id="booking-mobile-error" aria-live="polite"></span>
         </label>
         <label>
           Destination
