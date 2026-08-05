@@ -1,0 +1,147 @@
+generator client {
+  provider = "prisma-client-js"
+}
+
+datasource db {
+  provider = "postgresql"
+}
+
+enum TenantPlan {
+  STARTER
+  GROWTH
+  SCALE
+  ENTERPRISE
+}
+
+enum TenantStatus {
+  TRIALING
+  ACTIVE
+  PAST_DUE
+  SUSPENDED
+}
+
+enum MembershipRole {
+  OWNER
+  ADMIN
+  OPERATOR
+  VIEWER
+}
+
+enum ApiKeyStatus {
+  ACTIVE
+  REVOKED
+}
+
+enum ServiceCategory {
+  TELECOM
+  DTH
+  WHATSAPP
+  PAYMENTS
+  TRAVEL
+  UTILITY
+}
+
+model Tenant {
+  id              String           @id @default(cuid())
+  slug            String           @unique
+  name            String
+  plan            TenantPlan       @default(STARTER)
+  status          TenantStatus     @default(TRIALING)
+  customDomain    String?          @unique
+  billingEmail    String?
+  stripeCustomerId String?         @unique
+  createdAt       DateTime         @default(now())
+  updatedAt       DateTime         @updatedAt
+  memberships     Membership[]
+  apiKeys         ApiKey[]
+  auditLogs       AuditLog[]
+  usageEvents     UsageEvent[]
+  services        TenantService[]
+
+  @@index([slug, status])
+}
+
+model User {
+  id             String       @id @default(cuid())
+  email          String       @unique
+  name           String?
+  passwordHash   String?
+  emailVerified  DateTime?
+  mfaEnabled     Boolean      @default(false)
+  createdAt      DateTime     @default(now())
+  updatedAt      DateTime     @updatedAt
+  memberships    Membership[]
+  auditLogs      AuditLog[]
+}
+
+model Membership {
+  id        String         @id @default(cuid())
+  tenantId  String
+  userId    String
+  role      MembershipRole @default(VIEWER)
+  createdAt DateTime       @default(now())
+  tenant    Tenant         @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  user      User           @relation(fields: [userId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, userId])
+  @@index([userId, role])
+}
+
+model ApiKey {
+  id          String       @id @default(cuid())
+  tenantId    String
+  name        String
+  keyPrefix   String
+  keyHash     String       @unique
+  scopes      String[]
+  status      ApiKeyStatus @default(ACTIVE)
+  lastUsedAt  DateTime?
+  expiresAt   DateTime?
+  createdAt   DateTime     @default(now())
+  tenant      Tenant       @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@index([tenantId, status])
+}
+
+model TenantService {
+  id          String          @id @default(cuid())
+  tenantId    String
+  category    ServiceCategory
+  enabled     Boolean         @default(true)
+  provider    String
+  config      Json            @default("{}")
+  createdAt   DateTime        @default(now())
+  updatedAt   DateTime        @updatedAt
+  tenant      Tenant          @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, category, provider])
+}
+
+model UsageEvent {
+  id             String   @id @default(cuid())
+  tenantId       String
+  metric         String
+  quantity       Int      @default(1)
+  idempotencyKey String?
+  metadata       Json     @default("{}")
+  occurredAt     DateTime @default(now())
+  tenant         Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+
+  @@unique([tenantId, idempotencyKey])
+  @@index([tenantId, metric, occurredAt])
+}
+
+model AuditLog {
+  id        String   @id @default(cuid())
+  tenantId  String
+  userId    String?
+  action    String
+  ipAddress String?
+  userAgent String?
+  metadata  Json     @default("{}")
+  createdAt DateTime @default(now())
+  tenant    Tenant   @relation(fields: [tenantId], references: [id], onDelete: Cascade)
+  user      User?    @relation(fields: [userId], references: [id], onDelete: SetNull)
+
+  @@index([tenantId, action, createdAt])
+}
