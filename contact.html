@@ -5,6 +5,7 @@
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Contact Us - Sohanur Travel</title>
   <link rel="stylesheet" href="styles.css">
+  <link rel="stylesheet" href="navbar.css">
   <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
   <style>
     /* ===== PAGE HEADER ===== */
@@ -225,7 +226,7 @@
 <body>
   <nav class="navbar">
     <div class="nav-container">
-      <a href="/" class="logo">
+      <a href="index.php" class="logo">
         <img src="logo.png" alt="Sohanur Travel Logo" class="logo-img">
       </a>
 
@@ -236,24 +237,22 @@
       </div>
 
       <ul class="nav-menu" id="navMenu">
-        <li><a href="/"><i class="fas fa-home"></i> Home</a></li>
-        <li><a href="/about"><i class="fas fa-info-circle"></i> About</a></li>
-        <li><a href="/contact" class="active"><i class="fas fa-phone"></i> Contact</a></li>
-        <li><a href="/blog"><i class="fas fa-blog"></i> Blog</a></li>
-        <li><a href="/flights"><i class="fas fa-plane"></i> Flights</a></li>
-        <li><a href="/trains"><i class="fas fa-train"></i> Trains</a></li>
-        <li><a href="/buses"><i class="fas fa-bus"></i> Buses</a></li>
-        
+        <li><a href="index.php"><i class="fas fa-home"></i> Home</a></li>
+        <li><a href="about.php"><i class="fas fa-info-circle"></i> About</a></li>
+        <li><a href="flights.html"><i class="fas fa-plane"></i> Flights</a></li>
+        <li><a href="trains.html"><i class="fas fa-train"></i> Trains</a></li>
+        <li><a href="buses.html"><i class="fas fa-bus"></i> Buses</a></li>
+        <li><a href="contact.html" class="active"><i class="fas fa-phone"></i> Contact</a></li>
+
         <li class="more-services">
-          <button class="more-services-btn" onclick="toggleMoreServices(event)">
+          <button class="more-services-btn" type="button">
             <i class="fas fa-ellipsis-h"></i> More
           </button>
           <ul class="dropdown-menu">
-            <li><a href="/hotels"><i class="fas fa-hotel"></i> Hotels</a></li>
-            <li><a href="/umrah"><i class="fas fa-kaaba"></i> Umrah</a></li>
-            <li><a href="/visa"><i class="fas fa-passport"></i> Visa</a></li>
-            <li><a href="/immigration"><i class="fas fa-file-alt"></i> Immigration</a></li>
-            <li><a href="/recharge"><i class="fas fa-mobile-alt"></i> Recharge</a></li>
+            <li><a href="hotels.html"><i class="fas fa-hotel"></i> Hotels</a></li>
+            <li><a href="umrah.html"><i class="fas fa-kaaba"></i> Umrah</a></li>
+            <li><a href="immigration.html"><i class="fas fa-file-alt"></i> Immigration</a></li>
+            <li><a href="recharge.html"><i class="fas fa-mobile-alt"></i> Recharge</a></li>
           </ul>
         </li>
       </ul>
@@ -387,11 +386,11 @@
       <div class="footer-section">
         <h4>Quick Links</h4>
         <ul>
-          <li><a href="/">Home</a></li>
-          <li><a href="/flights">Flights</a></li>
-          <li><a href="/trains">Trains</a></li>
-          <li><a href="/hotels">Hotels</a></li>
-          <li><a href="/blog">Blog</a></li>
+          <li><a href="index.php">Home</a></li>
+          <li><a href="flights.html">Flights</a></li>
+          <li><a href="trains.html">Trains</a></li>
+          <li><a href="hotels.html">Hotels</a></li>
+          <li><a href="contact.html">Contact</a></li>
         </ul>
       </div>
       <div class="footer-section">
@@ -411,51 +410,5 @@
   </a>
 
   <script src="script.js"></script>
-  <script>
-    function toggleMoreServices(event) {
-      event.preventDefault();
-      event.stopPropagation();
-      var dropdown = event.currentTarget.closest(".more-services");
-      if (dropdown) {
-        dropdown.classList.toggle("open");
-      }
-    }
-
-    document.addEventListener("click", function () {
-      document.querySelectorAll(".more-services.open").forEach(function (item) {
-        item.classList.remove("open");
-      });
-    });
-
-    document.addEventListener("DOMContentLoaded", function () {
-      const hamburger = document.getElementById("hamburger");
-      const navMenu = document.getElementById("navMenu");
-
-      if (hamburger && navMenu) {
-        hamburger.addEventListener("click", function (e) {
-          e.preventDefault();
-          e.stopPropagation();
-          navMenu.classList.toggle("active");
-        });
-      }
-
-      document.querySelectorAll("#navMenu a").forEach(function (link) {
-        link.addEventListener("click", function () {
-          navMenu.classList.remove("active");
-        });
-      });
-
-      document.addEventListener("click", function (e) {
-        if (
-          navMenu &&
-          hamburger &&
-          !navMenu.contains(e.target) &&
-          !hamburger.contains(e.target)
-        ) {
-          navMenu.classList.remove("active");
-        }
-      });
-    });
-  </script>
 </body>
 </html>
